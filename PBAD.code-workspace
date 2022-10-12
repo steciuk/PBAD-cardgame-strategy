@@ -1,0 +1,21 @@
+{
+	"folders": [
+		{
+			"path": "backend"
+		},
+		{
+			"path": "docs"
+		},
+		{
+			"path": "frontend"
+		}
+	],
+	"settings": {},
+	"extensions": {
+		"recommendations": [
+			"streetsidesoftware.code-spell-checker",
+			"mikestead.dotenv",
+			"wayou.vscode-todo-highlight"
+		]
+	}
+}
