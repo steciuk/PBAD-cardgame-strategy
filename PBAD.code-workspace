@@ -10,12 +10,16 @@
 			"path": "frontend"
 		}
 	],
-	"settings": {},
+	"settings": {
+		"editor.formatOnSave": true,
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
 	"extensions": {
 		"recommendations": [
 			"streetsidesoftware.code-spell-checker",
 			"mikestead.dotenv",
-			"wayou.vscode-todo-highlight"
+			"wayou.vscode-todo-highlight",
+			"esbenp.prettier-vscode"
 		]
 	}
 }
