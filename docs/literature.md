@@ -55,10 +55,20 @@ Ogólna analiza gry w wojnę i czy są jakieś możliwe strategie.
 
 ### [Note on a War-like Card Game](https://www.tandfonline.com/doi/pdf/10.4169/amer.math.monthly.119.09.793?needAccess=true)
 
-We prove that the probability that one of the players has a winning strategy in the War-like card game “Peer Pressure” approaches zero as the number of cards dealt approaches infinity, even if the cards are dealt in a slightly-biased manner.
+> We prove that the probability that one of the players has a winning strategy in the War-like card game “Peer Pressure” approaches zero as the number of cards dealt approaches infinity, even if the cards are dealt in a slightly-biased manner.
 
 - Zwycięska strategia to taka która pozwala na zwycięstwo niezależnie od ruchów przeciwnika.
 
 ## Wnioski z badań literatury
 
 Gra w wojnę nie jest grą mocno przebadaną w literaturze naukowej. Istnieje kilka dzień które badają tą grę karcianą, jednakże opierają się na statystyce. Istnieją prace analizujące występowanie strategii wygrywającej czyli takiej która prowadzi do zwycięstwa niezależnie od ruchów przeciwnika, lecz także jest to oparte na statystyce i nie wskazuje w jaki sposób można by dojść do takiej strategii. Nie udało nam się znaleźć pracy, która pokazywałaby w jaki sposób można by realnie zwiększyć szansę na swoją wygraną, posiadając komputer pozwalający na zapamiętanie rozkładu wszystkich kart zarówno w swojej ręce jak i ręce przeciwnika
+
+## Prace dodatkowo zaproponowane przez prowadzącego
+
+### [Computing Game Strategies](https://www.researchgate.net/publication/265829608_Computing_Game_Strategies)
+
+### [Designing Card Game Strategies with Genetic Programming and Monte-Carlo Tree Search: A Case Study of Hearthstone](https://www.researchgate.net/publication/348262166_Designing_Card_Game_Strategies_with_Genetic_Programming_and_Monte-Carlo_Tree_Search_A_Case_Study_of_Hearthstone)
+
+### [A Simple Winning Strategy for the Card Game War](https://scienceblogs.com/pontiff/2008/09/12/a-simple-strategy-for-the-card)
+
+### [How can you introduce strategy into the card game "WAR"?](https://www.quora.com/How-can-you-introduce-strategy-into-the-card-game-WAR)
