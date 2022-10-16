@@ -61,7 +61,7 @@ Ogólna analiza gry w wojnę i czy są jakieś możliwe strategie.
 
 ## Wnioski z badań literatury
 
-Gra w wojnę nie jest grą mocno przebadaną w literaturze naukowej. Istnieje kilka dzień które badają tą grę karcianą, jednakże opierają się na statystyce. Istnieją prace analizujące występowanie strategii wygrywającej czyli takiej która prowadzi do zwycięstwa niezależnie od ruchów przeciwnika, lecz także jest to oparte na statystyce i nie wskazuje w jaki sposób można by dojść do takiej strategii. Nie udało nam się znaleźć pracy, która pokazywałaby w jaki sposób można by realnie zwiększyć szansę na swoją wygraną, posiadając komputer pozwalający na zapamiętanie rozkładu wszystkich kart zarówno w swojej ręce jak i ręce przeciwnika
+Gra w wojnę nie jest grą mocno przebadaną w literaturze naukowej. Istnieje kilka dzieł, które badają tą grę karcianą, jednakże opierają się na statystyce. Istnieją prace analizujące występowanie strategii wygrywającej czyli takiej która prowadzi do zwycięstwa niezależnie od ruchów przeciwnika, lecz także jest to oparte na statystyce i nie wskazuje w jaki sposób można by dojść do takiej strategii. Nie udało nam się znaleźć pracy, która pokazywałaby w jaki sposób można by realnie zwiększyć szansę na swoją wygraną, posiadając komputer pozwalający na zapamiętanie rozkładu wszystkich kart zarówno w swojej ręce jak i ręce przeciwnika
 
 ## Prace dodatkowo zaproponowane przez prowadzącego
 
