@@ -22,7 +22,7 @@ Wnioski:
 - "Sprawiedliwy" podział talii wtedy, gdy waga kart każdego z graczy to 0 (np. gdy jeden z graczy otrzyma wszystkie czerwone, a drugi czarne karty).
 - Prawdopodobieństwo zwycięstwa liniowo zależne od wagi kart gracza.
 
-### [Framework for Monte Carlo TreeSearch-related strategies in CompetitiveCard Based Games](https://core.ac.uk/download/pdf/143405876.pdf) (96 stron)
+### [Framework for Monte Carlo TreeSearch-related strategies in Competitive Card Based Games](https://core.ac.uk/download/pdf/143405876.pdf) (96 stron)
 
 > ... the first objective of this dissertation is to research various state of the art MCTS enhancements in a context of card games and then proceed to apply, experiment and fine tune them in order to achieve a highly competitive implementation, validated and tested against other algorithms such as MM. ...
 
@@ -34,7 +34,7 @@ Chyba tego szukaliśmy
 
 ### [All's Fair in Love and WAR: Combinatorics in a card game](https://digitalcommons.csbsju.edu/honors_theses/602/)
 
-Nie ma chyba dostępnego pdf'a, a też się wydaje pasować do tematu.
+Nie ma chyba dostępnego pdf'a. Może gdzieś uda się znaleźć, bo też się wydaje pasować do tematu.
 
 > ... For example is it possible that a game may not end? Is it plausible that an entire game be played without a match occurring? Some of these questions were asked and answered by Angela Chappell in her 1998 senior honors thesis. To find her answers, however, she had to establish a set of assumptions for the way the game was to be played. To illustrate, she generated her data using the convention that, if player A and B were playing War, and on the first hand player A's card was greater than player B's card, then A's card would go back to A's hand first before B's card. My project, then, is to change several of Ms. Chappell's assumptions and replay the games. ...
 
