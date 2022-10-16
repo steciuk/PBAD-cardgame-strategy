@@ -42,10 +42,10 @@ Nie ma chyba dostępnego pdf'a. Może gdzieś uda się znaleźć, bo też się w
 
 Praca, na której bazuje "All's Fair in Love and WAR: Combinatorics in a card game".
 
-### [An analysis of a war-like card game] (https://arxiv.org/abs/1001.1017)
+### [An analysis of a war-like card game](https://arxiv.org/abs/1001.1017)
 
 Ogólna analiza gry w wojnę i czy są jakieś możliwe strategie.
 
-### [Note on a War-like Card Game] (https://www.tandfonline.com/doi/abs/10.4169/amer.math.monthly.119.09.793)
+### [Note on a War-like Card Game](https://www.tandfonline.com/doi/pdf/10.4169/amer.math.monthly.119.09.793?needAccess=true)
 
 We prove that the probability that one of the players has a winning strategy in the War-like card game “Peer Pressure” approaches zero as the number of cards dealt approaches infinity, even if the cards are dealt in a slightly-biased manner.
