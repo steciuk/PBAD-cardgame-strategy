@@ -67,8 +67,14 @@ Gra w wojnę nie jest grą mocno przebadaną w literaturze naukowej. Istnieje ki
 
 ### [Computing Game Strategies](https://www.researchgate.net/publication/265829608_Computing_Game_Strategies)
 
+- Konstruowanie strategii w grach decyzyjnych.
+
 ### [Designing Card Game Strategies with Genetic Programming and Monte-Carlo Tree Search: A Case Study of Hearthstone](https://www.researchgate.net/publication/348262166_Designing_Card_Game_Strategies_with_Genetic_Programming_and_Monte-Carlo_Tree_Search_A_Case_Study_of_Hearthstone)
 
 ### [A Simple Winning Strategy for the Card Game War](https://scienceblogs.com/pontiff/2008/09/12/a-simple-strategy-for-the-card)
 
+- Pokazuje że wybór strategii ma znaczenie i ma wpływ na % wygranych gier.
+
 ### [How can you introduce strategy into the card game "WAR"?](https://www.quora.com/How-can-you-introduce-strategy-into-the-card-game-WAR)
+
+- Nic ciekawego tutaj nie ma - forum na którym ludzie piszą, że wojna to gra w której nie można mówić o strategii bo nie ma decyzji.
