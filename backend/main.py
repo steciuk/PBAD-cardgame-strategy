@@ -1,10 +1,12 @@
-from strategy.test import Test
+from strategy.Deck import Deck
 
 
-def main(test_str: str) -> None:
-    card = Test()
-    print(card.hello() + ' ' + test_str)
+def main() -> None:
+    deck = Deck()
+    deck.full()
+    deck.shuffle()
+    print(deck.cards)
 
 
 if __name__ == "__main__":
-    main('Test')
+    main()
