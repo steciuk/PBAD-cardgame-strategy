@@ -2,5 +2,8 @@
 	"editor.tabSize": 4,
 	"python.linting.mypyEnabled": true,
 	"python.linting.enabled": true,
-	"cSpell.words": ["venv"]
+	"cSpell.words": ["venv"],
+	"prettier.enable": false,
+	"editor.detectIndentation": false,
+	"editor.insertSpaces": true
 }

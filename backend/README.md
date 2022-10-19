@@ -39,7 +39,7 @@ In `backend` directory with activated virtual environment run:
 ### Windows
 
 ```
-python -m pip install -r <package_name>
+python -m pip install -U <package_name>
 ```
 
 Before commit run:
@@ -51,11 +51,25 @@ python -m pip freeze > requirements.txt
 ### macOS/Linux
 
 ```
-python3 -m pip install -r <package_name>
+python3 -m pip install -U <package_name>
 ```
 
 Before commit run:
 
 ```
 python3 -m pip freeze > requirements.txt
+```
+
+## Running tests
+
+### Windows
+
+```
+python -m pytest
+```
+
+### macOS/Linux
+
+```
+python3 -m pytest
 ```
