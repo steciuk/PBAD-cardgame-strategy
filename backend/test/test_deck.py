@@ -58,6 +58,12 @@ def test_shuffle() -> None:
     assert cards_to_codes(deck1.cards) != ALL_CARD_CODES_IN_ORDER
 
 
+def test_push_bottom() -> None:
+    deck1 = Deck([Card('2H'), Card('3C'), Card('4S')])
+    deck1.push_bottom([Card('2H'), Card('7S')])
+    assert cards_to_codes(deck1.cards) == ['2H', '3C', '4S', '2H', '7S']
+
+
 def pop_top() -> None:
     deck1 = Deck([Card('2H'), Card('3C'), Card('4S')])
     card1 = deck1.pop_top()

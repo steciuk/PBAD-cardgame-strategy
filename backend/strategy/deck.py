@@ -2,11 +2,18 @@ import random
 
 from strategy.card import Card
 from strategy.utils.card.consts import RANKS_LIST, SUITS_LIST
+from strategy.utils.card.utils import cards_to_codes
 
 
 class Deck:
     def __init__(self, cards: list[Card] = []) -> None:
         self._cards = cards.copy()
+
+    def __repr__(self) -> str:
+        return ' '.join(cards_to_codes(self._cards))
+
+    def __str__(self) -> str:
+        return ' '.join(cards_to_codes(self._cards))
 
     @property
     def cards(self) -> list[Card]:
@@ -37,6 +44,9 @@ class Deck:
 
     def shuffle(self) -> None:
         random.shuffle(self._cards)
+
+    def push_bottom(self, cards: list[Card]) -> None:
+        self._cards.extend(cards)
 
     def pop_top(self) -> Card:
         if len(self._cards) == 0:

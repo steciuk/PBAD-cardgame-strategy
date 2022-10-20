@@ -1,21 +1,22 @@
 {
-	"editor.tabSize": 4,
-	"python.linting.mypyEnabled": true,
-	"python.linting.enabled": true,
-	"cSpell.words": [
-        "consts",
-        "venv"
-    ],
-	"prettier.enable": false,
-	"editor.detectIndentation": false,
-	"editor.insertSpaces": true,
-	"editor.defaultFormatter": "ms-python.python",
-	"editor.formatOnSave": true,
-	"editor.codeActionsOnSave": {
-		"source.organizeImports": true
-	},
-	"isort.args": ["--profile", "black"],
+    "editor.tabSize": 4,
+    "editor.defaultFormatter": "ms-python.python",
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+        "source.addMissingImports": true
+    },
+    "editor.bracketPairColorization.enabled": true,
+    "editor.guides.bracketPairs": true,
+    "editor.detectIndentation": false,
+    "editor.insertSpaces": true,
     "editor.inlayHints.padding": true,
-	"python.analysis.inlayHints.functionReturnTypes": true,
-	"python.analysis.inlayHints.variableTypes": true,
+    "git.autofetch": true,
+    "cSpell.language": "en,pl",
+    "python.linting.mypyEnabled": true,
+    "python.linting.enabled": true,
+    "cSpell.words": ["consts", "venv"],
+    "prettier.enable": false,
+    "isort.args": ["--profile", "black"],
+    "python.analysis.inlayHints.functionReturnTypes": true,
+    "python.analysis.inlayHints.variableTypes": true,
 }
