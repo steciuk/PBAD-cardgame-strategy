@@ -2,8 +2,20 @@
 	"editor.tabSize": 4,
 	"python.linting.mypyEnabled": true,
 	"python.linting.enabled": true,
-	"cSpell.words": ["venv"],
+	"cSpell.words": [
+        "consts",
+        "venv"
+    ],
 	"prettier.enable": false,
 	"editor.detectIndentation": false,
-	"editor.insertSpaces": true
+	"editor.insertSpaces": true,
+	"editor.defaultFormatter": "ms-python.python",
+	"editor.formatOnSave": true,
+	"editor.codeActionsOnSave": {
+		"source.organizeImports": true
+	},
+	"isort.args": ["--profile", "black"],
+    "editor.inlayHints.padding": true,
+	"python.analysis.inlayHints.functionReturnTypes": true,
+	"python.analysis.inlayHints.variableTypes": true,
 }

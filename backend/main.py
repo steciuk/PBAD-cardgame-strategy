@@ -1,4 +1,5 @@
-from strategy.Deck import Deck
+from strategy.card import Card
+from strategy.deck import Deck
 
 
 def main() -> None:

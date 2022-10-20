@@ -1,6 +1,6 @@
 import pytest
 
-from strategy.Card import Card
+from strategy.card import Card
 
 
 def test_init() -> None:
@@ -35,15 +35,15 @@ def test_repr() -> None:
 
 def test_eq() -> None:
     card1 = Card('2H')
-    card2 = Card('2D')
-    card3 = Card('3S')
+    card2 = Card('2H')
+    card3 = Card('2S')
     assert (card1 == card2) == True
     assert (card1 == card3) == False
 
 
 def test_ne() -> None:
     card1 = Card('2H')
-    card2 = Card('2D')
+    card2 = Card('2H')
     card3 = Card('3S')
     assert (card1 != card2) == False
     assert (card1 != card3) == True
@@ -57,11 +57,10 @@ def test_lt() -> None:
     assert (card1 < card3) == True
 
 
-def test_isSame() -> None:
+def test_is_same_rank() -> None:
     card1 = Card('2H')
     card2 = Card('2D')
     card3 = Card('3S')
-    card4 = Card('3S')
 
-    assert card3.is_same(card4) == True
-    assert card1.is_same(card2) == False
+    assert card1.is_same_rank(card2) == True
+    assert card1.is_same_rank(card3) == False

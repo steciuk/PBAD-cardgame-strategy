@@ -1,5 +1,7 @@
 import random
-from strategy.Card import RANKS_LIST, SUITS_LIST, Card
+
+from strategy.card import Card
+from strategy.utils.card.consts import RANKS_LIST, SUITS_LIST
 
 
 class Deck:
