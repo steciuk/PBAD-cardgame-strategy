@@ -59,10 +59,6 @@ Ogólna analiza gry w wojnę i czy są jakieś możliwe strategie.
 
 - Zwycięska strategia to taka która pozwala na zwycięstwo niezależnie od ruchów przeciwnika.
 
-## Wnioski z badań literatury
-
-Gra w wojnę nie jest grą mocno przebadaną w literaturze naukowej. Istnieje kilka dzieł, które badają tą grę karcianą, jednakże opierają się na statystyce. Istnieją prace analizujące występowanie strategii wygrywającej czyli takiej która prowadzi do zwycięstwa niezależnie od ruchów przeciwnika, lecz także jest to oparte na statystyce i nie wskazuje w jaki sposób można by dojść do takiej strategii. Nie udało nam się znaleźć pracy, która pokazywałaby w jaki sposób można by realnie zwiększyć szansę na swoją wygraną, posiadając komputer pozwalający na zapamiętanie rozkładu wszystkich kart zarówno w swojej ręce jak i ręce przeciwnika
-
 ## Prace dodatkowo zaproponowane przez prowadzącego
 
 ### [Computing Game Strategies](https://www.researchgate.net/publication/265829608_Computing_Game_Strategies)
@@ -78,3 +74,7 @@ Gra w wojnę nie jest grą mocno przebadaną w literaturze naukowej. Istnieje ki
 ### [How can you introduce strategy into the card game "WAR"?](https://www.quora.com/How-can-you-introduce-strategy-into-the-card-game-WAR)
 
 - Nic ciekawego tutaj nie ma - forum na którym ludzie piszą, że wojna to gra w której nie można mówić o strategii bo nie ma decyzji.
+
+## Wnioski z badań literatury
+
+Gra w wojnę nie jest grą mocno przebadaną w literaturze naukowej. Istnieje kilka dzieł, które badają tą grę karcianą, jednakże opierają się na statystyce. Istnieją prace analizujące występowanie strategii wygrywającej czyli takiej która prowadzi do zwycięstwa niezależnie od ruchów przeciwnika, lecz także jest to oparte na statystyce i nie wskazuje w jaki sposób można by dojść do takiej strategii. Jedynie jeden wpis na blogu poruszał temat realnego zwiększenia szansy na wygraną przy grze w wojnę. Wpis ten zawierał sztywny sposób zbierania wygranych kart i na podstawie wyników z eksperymentów udało się uzyskać zwiększenie szans na zwycięstwo o kilkanaście procent. Jednakże nie udało nam się znaleźć pracy, która pokazywałaby w jaki sposób można by zwiększyć szansę na swoją wygraną, posiadając komputer pozwalający na zapamiętanie rozkładu wszystkich kart zarówno w swojej ręce jak i ręce przeciwnika.
