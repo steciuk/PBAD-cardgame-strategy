@@ -27,6 +27,7 @@ Wnioski:
 ### [Framework for Monte Carlo TreeSearch-related strategies in Competitive Card Based Games](https://core.ac.uk/download/pdf/143405876.pdf) (96 stron)
 
 > ... the first objective of this dissertation is to research various state of the art MCTS enhancements in a context of card games and then proceed to apply, experiment and fine tune them in order to achieve a highly competitive implementation, validated and tested against other algorithms such as MM. ...
+> Bardzo matematyczne podejście do strategii w grach.
 
 ### [Combinatorial Aspects of the Card Game War](https://arxiv.org/pdf/2202.00473.pdf) (22 strony)
 
@@ -63,13 +64,13 @@ Ogólna analiza gry w wojnę i czy są jakieś możliwe strategie.
 
 ### [Computing Game Strategies](https://www.researchgate.net/publication/265829608_Computing_Game_Strategies)
 
-- Konstruowanie strategii w grach decyzyjnych.
+- Konstruowanie strategii w grach decyzyjnych. Bardzo matematyczne, nie ma bezpośrednio nic o grze w wojnę. Można poszukać ciekawych rozwiązań, jak symulować czy jakie są możliwe strategie.
 
 ### [Designing Card Game Strategies with Genetic Programming and Monte-Carlo Tree Search: A Case Study of Hearthstone](https://www.researchgate.net/publication/348262166_Designing_Card_Game_Strategies_with_Genetic_Programming_and_Monte-Carlo_Tree_Search_A_Case_Study_of_Hearthstone)
 
 ### [A Simple Winning Strategy for the Card Game War](https://scienceblogs.com/pontiff/2008/09/12/a-simple-strategy-for-the-card)
 
-- Pokazuje że wybór strategii ma znaczenie i ma wpływ na % wygranych gier.
+- Pokazuje że wybór strategii ma znaczenie i ma wpływ na % wygranych gier. Ciekawe dane udostępnione w zależności od wybranej strategii. Autor nie powiedział nic o potencjalnym wykorzystaniu strategii przez obu graczy i co się wtedy dzieje.
 
 ### [How can you introduce strategy into the card game "WAR"?](https://www.quora.com/How-can-you-introduce-strategy-into-the-card-game-WAR)
 
