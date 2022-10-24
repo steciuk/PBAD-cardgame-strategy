@@ -2,16 +2,12 @@
 
 ### [On Finiteness in the Card Game of War](https://www.tandfonline.com/doi/pdf/10.4169/amer.math.monthly.119.04.318?needAccess=true&) (krótki artykuł)
 
-Wnioski:
-
 - To czy gra będzie skończona czy nie, zależy od tego jak dobierane przez zwycięzcę.
 - Jeżeli karty zbierane są zawsze w taki sam sposób (np. zawsze dobieramy najpierw swoją a później przeciwnika) to mogą się zdarzyć nieskończone gry z cyklem.
 - Jeżeli kolejność zbierania kart jest w jakimś stopniu losowa, gra zawsze jest grą skończoną. Jest to wniosek na podstawie analizy [Łańcuchów Markowa](https://pl.wikipedia.org/wiki/%C5%81a%C5%84cuch_Markowa)
 - Zmiana kolejności wkładanych kart na spód swojej talii ma wpływ zarówno na długość rozgrywki jak i może mieć wpływ na jej wynik.
 
 ### [Predictability in the Game of War](https://www.scq.ubc.ca/predictability-in-the-game-of-war/) (krótki artykuł)
-
-Wnioski:
 
 - Określenie _wag_ kart:
 
@@ -24,21 +20,16 @@ Wnioski:
 - Prawdopodobieństwo zwycięstwa liniowo zależne od wagi kart gracza.
 - Prawdopodobieństwo zwycięstwa liniowo zależy od liczby zwyciężonych rund przez gracza w pierwszej iteracji talii.
 
-### [Framework for Monte Carlo TreeSearch-related strategies in Competitive Card Based Games](https://core.ac.uk/download/pdf/143405876.pdf) (96 stron)
+### [~~Framework for Monte Carlo TreeSearch-related strategies in Competitive Card Based Games~~](https://core.ac.uk/download/pdf/143405876.pdf) (96 stron)
 
-> ... the first objective of this dissertation is to research various state of the art MCTS enhancements in a context of card games and then proceed to apply, experiment and fine tune them in order to achieve a highly competitive implementation, validated and tested against other algorithms such as MM. ...
-> Bardzo matematyczne podejście do strategii w grach.
+- Bardzo matematyczne podejście do strategii w grach. Raczej w kontekście naszej pracy się nie przyda.
 
 ### [Combinatorial Aspects of the Card Game War](https://arxiv.org/pdf/2202.00473.pdf) (22 strony)
-
-Chyba tego szukaliśmy
-
-> This paper studies a single-suit version of the card game War on a finite deck of cards. There are varying methods of how players put the cards that they win back into their hands, but we primarily consider randomly putting the cards back and deterministically always putting the winning card before the losing card. The concept of a passthrough is defined, which refers to a player playing through all cards in their hand from a particular point in the game. We consider games in which the second player wins during their first passthrough. We introduce several combinatorial objects related to the game: game graphs, winloss sequences, win-loss binary trees, and game posets. We show how these objects relate to each other. We enumerate states depending on the number of rounds and the number of passthroughs.
 
 - Rozważono 2 rodzaje chowania do talii - najpierw swoja, a potem przeciwnika oraz losowo.
 - Podano wzór na prawdopodobieństwo, że gra będzie trwała daną liczbę rund przy odkładaniu najpierw swojej karty.
 
-### [All's Fair in Love and WAR: Combinatorics in a card game](https://digitalcommons.csbsju.edu/honors_theses/602/)
+### [~~All's Fair in Love and WAR: Combinatorics in a card game~~](https://digitalcommons.csbsju.edu/honors_theses/602/)
 
 Nie ma chyba dostępnego pdf'a. Może gdzieś uda się znaleźć, bo też się wydaje pasować do tematu.
 
@@ -48,11 +39,14 @@ Nie ma chyba dostępnego pdf'a. Może gdzieś uda się znaleźć, bo też się w
 
 Praca, na której bazuje "All's Fair in Love and WAR: Combinatorics in a card game".
 
-Opis możliwości powstawania pętli w trakcie gry.
+- Opis możliwości powstawania pętli w trakcie gry. Bardzo ciekawe rozważenia w celu unikania przez algorytm zagrań, które mogą doprowadzić do nieskończonej rozgrywki.
 
 ### [An analysis of a war-like card game](https://arxiv.org/abs/1001.1017)
 
-Ogólna analiza gry w wojnę i czy są jakieś możliwe strategie.
+- Gra różniąca się od klasycznej gry w wojnę (Raczej z tego względu nie przydatne dla naszej pracy):
+  - przy każdej rundzie karta wyższa jest odrzucana,
+  - W grze nie ma dwóch kart o takich samych wartościach (nie rozważane są sytuacje remisów/wojen).
+- Praca zawiera dodatkowe rozważania na temat wpływu stosunku liczby kart posiadanych przez graczy na prawdopodobieństwo wygranej, co może być dodatkowo ciekawym tematem do rozważenia w naszej pracy.
 
 ### [Note on a War-like Card Game](https://www.tandfonline.com/doi/pdf/10.4169/amer.math.monthly.119.09.793?needAccess=true)
 
@@ -66,15 +60,17 @@ Ogólna analiza gry w wojnę i czy są jakieś możliwe strategie.
 
 - Konstruowanie strategii w grach decyzyjnych. Bardzo matematyczne, nie ma bezpośrednio nic o grze w wojnę. Można poszukać ciekawych rozwiązań, jak symulować czy jakie są możliwe strategie.
 
-### [Designing Card Game Strategies with Genetic Programming and Monte-Carlo Tree Search: A Case Study of Hearthstone](https://www.researchgate.net/publication/348262166_Designing_Card_Game_Strategies_with_Genetic_Programming_and_Monte-Carlo_Tree_Search_A_Case_Study_of_Hearthstone)
+### [~~Designing Card Game Strategies with Genetic Programming and Monte-Carlo Tree Search: A Case Study of Hearthstone~~](https://www.researchgate.net/publication/348262166_Designing_Card_Game_Strategies_with_Genetic_Programming_and_Monte-Carlo_Tree_Search_A_Case_Study_of_Hearthstone)
+
+Nie ma dostępu. Można pokusić się o poproszenie autorów o pracę.
 
 ### [A Simple Winning Strategy for the Card Game War](https://scienceblogs.com/pontiff/2008/09/12/a-simple-strategy-for-the-card)
 
 - Pokazuje że wybór strategii ma znaczenie i ma wpływ na % wygranych gier. Ciekawe dane udostępnione w zależności od wybranej strategii. Autor nie powiedział nic o potencjalnym wykorzystaniu strategii przez obu graczy i co się wtedy dzieje.
 
-### [How can you introduce strategy into the card game "WAR"?](https://www.quora.com/How-can-you-introduce-strategy-into-the-card-game-WAR)
+### [~~How can you introduce strategy into the card game "WAR"?~~](https://www.quora.com/How-can-you-introduce-strategy-into-the-card-game-WAR)
 
-- Nic ciekawego tutaj nie ma - forum na którym ludzie piszą, że wojna to gra w której nie można mówić o strategii bo nie ma decyzji.
+- Nic ciekawego tutaj nie ma - forum na którym ludzie piszą, że wojna to gra w której nie można mówić o strategii bo nie ma decyzji. Do odrzucenia.
 
 ## Wnioski z badań literatury
 
