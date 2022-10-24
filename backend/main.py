@@ -1,14 +1,3 @@
-<<<<<<< HEAD
-from strategy.test import Test
-from strategy.testClass import Test2
-
-
-def main(test_str: str) -> None:
-    card = Test()
-    print(card.hello() + ' ' + test_str)
-    card2 = Test2()
-    
-=======
 from strategy.card import Card
 from strategy.deck import Deck
 
@@ -87,7 +76,6 @@ def war() -> None:
 
 def main() -> None:
     pass
->>>>>>> 5f3173ddc3297268bdaaf23fb92357df34a7ca57
 
 
 if __name__ == "__main__":
