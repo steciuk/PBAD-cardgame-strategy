@@ -1,4 +1,4 @@
-from strategy.utils.card.consts import SUITS_SET, WEIGHTS
+from simulation.utils.card.consts import SUITS_SET, WEIGHTS
 
 
 class Card:

@@ -1,4 +1,4 @@
-from strategy.card import Card
+from simulation.card import Card
 
 
 def cards_to_codes(cards: list[Card]) -> list[str]:

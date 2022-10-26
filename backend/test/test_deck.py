@@ -1,8 +1,8 @@
 import pytest
 
-from strategy.card import Card
-from strategy.deck import Deck
-from strategy.utils.card.utils import cards_to_codes
+from simulation.card import Card
+from simulation.deck import Deck
+from simulation.utils.card.utils import cards_to_codes
 
 ALL_CARD_CODES_IN_ORDER: list[str] = ['2H', '2D', '2S', '2C', '3H', '3D', '3S', '3C', '4H', '4D', '4S', '4C', '5H',
                                       '5D', '5S', '5C', '6H', '6D', '6S', '6C', '7H', '7D', '7S', '7C', '8H', '8D',

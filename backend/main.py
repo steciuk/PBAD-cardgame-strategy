@@ -1,5 +1,5 @@
-from strategy.card import Card
-from strategy.deck import Deck
+from simulation.card import Card
+from simulation.deck import Deck
 
 
 def war() -> None:

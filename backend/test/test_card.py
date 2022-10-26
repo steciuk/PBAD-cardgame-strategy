@@ -1,6 +1,6 @@
 import pytest
 
-from strategy.card import Card
+from simulation.card import Card
 
 
 def test_init() -> None:
