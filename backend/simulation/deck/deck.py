@@ -1,8 +1,9 @@
 import random
 
 from simulation.deck.card import Card
+from simulation.game_config.enums import DeckType
 from simulation.utils.deck.consts import RANKS_LIST, SUITS_LIST
-from simulation.utils.deck.utils import cards_to_codes
+from simulation.utils.deck.utils import cards_to_codes, get_cards_list_of_type
 
 
 class Deck:
@@ -28,8 +29,7 @@ class Deck:
         return sum(card.weight for card in self._cards)
 
     def full(self) -> None:
-        self._cards = [Card(rank, suit)
-                       for rank in RANKS_LIST for suit in SUITS_LIST]
+        self._cards = get_cards_list_of_type(DeckType.FULL)
 
     def empty(self) -> None:
         self._cards = []
