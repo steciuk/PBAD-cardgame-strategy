@@ -1,4 +1,4 @@
-from simulation.utils.card.consts import SUITS_SET, WEIGHTS
+from simulation.utils.deck.consts import SUITS_SET, WEIGHTS
 
 
 class Card:
@@ -81,3 +81,6 @@ class Card:
 
     def __ge__(self, other: "Card") -> bool:
         return self._weight >= other._weight
+
+    def __hash__(self) -> int:
+        return hash(self.code)

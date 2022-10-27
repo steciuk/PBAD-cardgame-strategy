@@ -19,4 +19,10 @@
     "isort.args": ["--profile", "black"],
     "python.analysis.inlayHints.functionReturnTypes": true,
     "python.analysis.inlayHints.variableTypes": true,
+    "python.formatting.autopep8Args": [
+        "--max-line-length",
+        "110",
+        "--experimental"
+    ],
+    "python.analysis.typeCheckingMode": "basic",
 }

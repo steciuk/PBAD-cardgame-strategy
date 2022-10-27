@@ -1,5 +1,9 @@
-from simulation.card import Card
-from simulation.deck import Deck
+import os
+
+from definitions import ROOT_DIR
+from simulation.deck.card import Card
+from simulation.deck.deck import Deck
+from simulation.game_config.configs import GameConfig
 
 
 def war() -> None:
@@ -79,4 +83,4 @@ def main() -> None:
 
 
 if __name__ == "__main__":
-    war()
+    main()

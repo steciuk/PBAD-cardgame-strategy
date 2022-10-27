@@ -1,8 +1,8 @@
 import random
 
-from simulation.card import Card
-from simulation.utils.card.consts import RANKS_LIST, SUITS_LIST
-from simulation.utils.card.utils import cards_to_codes
+from simulation.deck.card import Card
+from simulation.utils.deck.consts import RANKS_LIST, SUITS_LIST
+from simulation.utils.deck.utils import cards_to_codes
 
 
 class Deck:
