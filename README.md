@@ -10,11 +10,11 @@ Projekt wykonany w ramach przedmiotu PBAD (Projekt badawczy) w semestrze 2022Z, 
 
 Adam Steciuk (300253)  
 adam.steciuk.stud@pw.edu.pl  
-TODO: @janek, @tomek - uzupełnijcie  
+TODO: @janek - uzupełnij  
 Jan Prugarewicz (xxxxxx)  
 xxx.xxx@xxx.xxx  
-Tomasz Słojewski (xxxxxx)  
-xxx.xxx@xxx.xxx
+Tomasz Słojewski (300268)  
+tomasz.slojewski.stud@pw.edu.pl
 
 ## Cel projektu
 
