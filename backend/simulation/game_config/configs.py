@@ -1,5 +1,4 @@
-import json
-from typing import Any, Union
+from typing import Union
 
 from simulation.game_config.enums import CardsDistribution, DeckType, Strategy
 
@@ -17,13 +16,36 @@ class RulesConfig:
 
 class GameConfig:
     def __init__(
-            self,
-            seed: Union[int, None],
-            max_turns: Union[int, None],
-            cards_distribution: CardsDistribution,
-            deck: Union[DeckType, list[str], None],
-            players: list[PlayerConfig],
-            rules: RulesConfig) -> None:
+            self, *,
+            seed: Union[int, None] = None,
+            max_turns: Union[int, None] = None,
+            cards_distribution: CardsDistribution = CardsDistribution.RANDOM,
+            deck: Union[DeckType, list[str], None] = DeckType.FULL,
+            players: list[PlayerConfig] = [PlayerConfig(Strategy.OWN_FIRST, None), PlayerConfig(Strategy.OWN_FIRST, None)],
+            rules: RulesConfig = RulesConfig(1)) -> None:
+
+        if len(players) < 2:
+            raise ValueError('At least 2 players are required')
+
+        if cards_distribution == CardsDistribution.FIXED or cards_distribution == CardsDistribution.FIXED_RANDOM:
+            print(
+                f"Property 'cards_distribution' is set to '{cards_distribution}'. 'deck' property will be ignored.")
+            deck = None
+
+            for player in players:
+                if player.cards is None or (isinstance(player.cards, list) and len(player.cards) == 0):
+                    raise ValueError(
+                        f"Property 'cards_distribution' is set to '{cards_distribution}' and not all players have 'cards' property set.")
+
+        elif cards_distribution == CardsDistribution.RANDOM:
+            if isinstance(deck, list) and len(deck) == 0:
+                raise ValueError(
+                    "Property 'cards_distribution' is set to 'RANDOM'. 'deck' property is an empty list.")
+
+            print("Property 'cards_distribution' is set to 'RANDOM'. 'cards' property of each player will be ignored.")
+            for player in players:
+                player.cards = None
+
         self.seed: int | None = seed
         self.max_turns: int | None = max_turns
         self.cards_distribution: CardsDistribution = cards_distribution

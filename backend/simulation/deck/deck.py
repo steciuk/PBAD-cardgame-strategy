@@ -2,7 +2,6 @@ import random
 
 from simulation.deck.card import Card
 from simulation.game_config.enums import DeckType
-from simulation.utils.deck.consts import RANKS_LIST, SUITS_LIST
 from simulation.utils.deck.utils import cards_to_codes, get_cards_list_of_type
 
 

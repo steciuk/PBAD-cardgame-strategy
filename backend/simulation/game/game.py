@@ -72,7 +72,7 @@ class Game():
             elif isinstance(self._config.deck, list):
                 deck = Deck(codes_to_cards(self._config.deck))
             else:
-                raise ValueError("Invalid config. Please use GameConfigBuilder.")
+                raise ValueError("Invalid config.")
 
             deck.shuffle()
             num_cards_per_player: int = deck.size // self._num_players
@@ -104,4 +104,4 @@ class Game():
                         deck.shuffle()
                     self._players[i] = (player_class(i, deck, self._config))
                 else:
-                    raise ValueError("Invalid config. Please use GameConfigBuilder.")
+                    raise ValueError("Invalid config.")

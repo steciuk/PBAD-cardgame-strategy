@@ -1,7 +1,7 @@
 from simulation.deck.card import Card
 from simulation.deck.deck import Deck
 from simulation.game.player.player import Player
-from simulation.game_config.configs import GameConfig, RulesConfig
+from simulation.game_config.configs import GameConfig
 
 
 class OwnFirstPlayer(Player):
