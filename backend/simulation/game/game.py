@@ -40,7 +40,8 @@ class Game():
 
                 highest_card = max(fighting.items(), key=lambda x: x[1])[1]
                 fighting_players_ids: list[int] = [
-                    i for i, card in fighting.items() if card.is_same_rank(highest_card)]
+                    i for i, card in fighting.items() if card.is_same_rank(highest_card)
+                ]
                 if len(fighting_players_ids) == 1:
                     turn_won = True
                     for i, card in fighting.items():

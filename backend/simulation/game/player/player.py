@@ -39,8 +39,8 @@ class Player(ABC):
         to_collect_in_order: list[Card] = self.strategy(to_collect)
 
         if collections.Counter(
-                [card for cards in to_collect.values() for card in cards]) != collections.Counter(
-                to_collect_in_order):
+            [card for cards in to_collect.values() for card in cards]
+        ) != collections.Counter(to_collect_in_order):
             raise Exception('Invalid strategy. Cards were not collected properly.')
 
         self._deck.push_bottom(to_collect_in_order)

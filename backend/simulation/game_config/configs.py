@@ -29,18 +29,21 @@ class GameConfig:
 
         if cards_distribution == CardsDistribution.FIXED or cards_distribution == CardsDistribution.FIXED_RANDOM:
             print(
-                f"Property 'cards_distribution' is set to '{cards_distribution}'. 'deck' property will be ignored.")
+                f"Property 'cards_distribution' is set to '{cards_distribution}'. 'deck' property will be ignored."
+            )
             deck = None
 
             for player in players:
                 if player.cards is None or (isinstance(player.cards, list) and len(player.cards) == 0):
                     raise ValueError(
-                        f"Property 'cards_distribution' is set to '{cards_distribution}' and not all players have 'cards' property set.")
+                        f"Property 'cards_distribution' is set to '{cards_distribution}' and not all players have 'cards' property set."
+                    )
 
         elif cards_distribution == CardsDistribution.RANDOM:
             if isinstance(deck, list) and len(deck) == 0:
                 raise ValueError(
-                    "Property 'cards_distribution' is set to 'RANDOM'. 'deck' property is an empty list.")
+                    "Property 'cards_distribution' is set to 'RANDOM'. 'deck' property is an empty list."
+                )
 
             print("Property 'cards_distribution' is set to 'RANDOM'. 'cards' property of each player will be ignored.")
             for player in players:
