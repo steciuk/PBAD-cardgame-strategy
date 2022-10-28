@@ -5,7 +5,7 @@ from simulation.game_config.enums import CardsDistribution, DeckType, Strategy
 
 
 class PlayerConfig:
-    def __init__(self, strategy: Strategy, cards:  Union[DeckType, list[str], None]) -> None:
+    def __init__(self, strategy: Strategy, cards: Union[DeckType, list[str], None]) -> None:
         self.strategy: Strategy = strategy
         self.cards: DeckType | list[str] | None = cards
 

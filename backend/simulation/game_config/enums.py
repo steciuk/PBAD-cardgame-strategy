@@ -4,6 +4,7 @@ from enum import Enum
 class CardsDistribution(Enum):
     RANDOM = 'RANDOM'
     FIXED = 'FIXED'
+    FIXED_RANDOM = 'FIXED_RANDOM'
 
 
 class DeckType(Enum):

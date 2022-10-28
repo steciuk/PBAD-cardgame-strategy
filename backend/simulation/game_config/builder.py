@@ -6,7 +6,7 @@ from simulation.game_config.enums import CardsDistribution, DeckType, Strategy
 
 class GameConfigBuilder():
     def __init__(self) -> None:
-        self._seed: Union[int, None] = None
+        self._seed: Union[int, None] = None  # implement in Game class
         self._max_turns: Union[int, None] = None
         self._cards_distribution = CardsDistribution.RANDOM
         self._deck: Union[DeckType, list[str], None] = DeckType.FULL
@@ -43,16 +43,17 @@ class GameConfigBuilder():
         if len(self._players) < 2:
             raise ValueError('At least 2 players are required')
 
-        if self._cards_distribution == CardsDistribution.FIXED:
-            print("Property 'cards_distribution' is set to 'FIXED'. 'deck' property will be ignored.")
+        if self._cards_distribution == CardsDistribution.FIXED or self._cards_distribution == CardsDistribution.FIXED_RANDOM:
+            print(
+                f"Property 'cards_distribution' is set to '{self._cards_distribution}'. 'deck' property will be ignored.")
             self._deck = None
 
             for player in self._players:
                 if player.cards is None or (isinstance(player.cards, list) and len(player.cards) == 0):
                     raise ValueError(
-                        "Property 'cards_distribution' is set to 'FIXED' and not all players have 'cards' property set.")
+                        f"Property 'cards_distribution' is set to '{self._cards_distribution}' and not all players have 'cards' property set.")
 
-        if self._cards_distribution == CardsDistribution.RANDOM:
+        elif self._cards_distribution == CardsDistribution.RANDOM:
             if isinstance(self._deck, list) and len(self._deck) == 0:
                 raise ValueError(
                     "Property 'cards_distribution' is set to 'RANDOM'. 'deck' property is an empty list.")
