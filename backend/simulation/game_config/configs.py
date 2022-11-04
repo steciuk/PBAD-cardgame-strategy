@@ -24,21 +24,26 @@ class GameConfig:
             rules: RulesConfig = RulesConfig(1)) -> None:
 
         if len(players) < 2:
-            raise ValueError('At least 2 players are required')
+            raise ValueError('At least 2 players are required.')
 
         if cards_distribution == CardsDistribution.FIXED or cards_distribution == CardsDistribution.FIXED_RANDOM:
             print(
-                f"Property 'cards_distribution' is set to '{cards_distribution}'. 'deck' property will be ignored."
+                f"Property 'cards_distribution' is set to '{cards_distribution.name}'. 'deck' property will be ignored."
             )
             deck = None
 
             for player in players:
                 if player.cards is None or (isinstance(player.cards, list) and len(player.cards) == 0):
                     raise ValueError(
-                        f"Property 'cards_distribution' is set to '{cards_distribution}' and not all players have 'cards' property set."
+                        f"Property 'cards_distribution' is set to '{cards_distribution.name}' and not all players have 'cards' property set."
                     )
 
         elif cards_distribution == CardsDistribution.RANDOM:
+            if deck is None:
+                raise ValueError(
+                    "Property 'cards_distribution' is set to 'RANDOM'. 'deck' property is None."
+                )
+
             if isinstance(deck, list) and len(deck) == 0:
                 raise ValueError(
                     "Property 'cards_distribution' is set to 'RANDOM'. 'deck' property is an empty list."
