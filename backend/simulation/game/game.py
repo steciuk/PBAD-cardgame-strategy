@@ -38,7 +38,7 @@ class Game():
 
                 print(' vs '.join([card.rank for card in fighting.values()]))
 
-                highest_card = max(fighting.items(), key=lambda x: x[1])[1]
+                highest_card: Card = max(fighting.items(), key=lambda x: x[1])[1]
                 fighting_players_ids: list[int] = [
                     i for i, card in fighting.items() if card.is_same_rank(highest_card)
                 ]
