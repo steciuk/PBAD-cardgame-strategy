@@ -17,7 +17,6 @@ class RulesConfig:
 class GameConfig:
     def __init__(
             self, *,
-            seed: Union[int, None] = None,
             max_turns: Union[int, None] = None,
             cards_distribution: CardsDistribution = CardsDistribution.RANDOM,
             deck: Union[DeckType, list[str], None] = DeckType.FULL,
@@ -49,7 +48,6 @@ class GameConfig:
             for player in players:
                 player.cards = None
 
-        self.seed: int | None = seed
         self.max_turns: int | None = max_turns
         self.cards_distribution: CardsDistribution = cards_distribution
         self.deck: DeckType | list[str] | None = deck

@@ -1,3 +1,5 @@
+import random
+
 from simulation.game.game import Game
 from simulation.game_config.configs import GameConfig, PlayerConfig, RulesConfig
 from simulation.game_config.enums import CardsDistribution, DeckType, Strategy

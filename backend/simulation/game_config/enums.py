@@ -19,3 +19,6 @@ class DeckType(Enum):
 
 class Strategy(Enum):
     OWN_FIRST = 'OWN_FIRST'
+    OWN_LAST = 'OWN_LAST'
+    RANDOM_CARDS = 'RANDOM_CARDS'
+    RANDOM_PLAYERS = 'RANDOM_PLAYERS'

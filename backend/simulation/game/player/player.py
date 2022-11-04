@@ -41,7 +41,7 @@ class Player(ABC):
         if collections.Counter(
             [card for cards in to_collect.values() for card in cards]
         ) != collections.Counter(to_collect_in_order):
-            raise Exception('Invalid strategy. Cards were not collected properly.')
+            raise ValueError('Invalid strategy. Cards were not collected properly.')
 
         self._deck.push_bottom(to_collect_in_order)
 

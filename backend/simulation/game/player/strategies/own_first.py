@@ -10,7 +10,7 @@ class OwnFirstPlayer(Player):
 
     def strategy(self, to_collect: dict[int, list[Card]]) -> list[Card]:
         """
-        Collects own cards first, then the cards of other players in order of their ids.
+        Collects own cards first, then the cards of other players in order of their ids. (in the order of cards played)
         """
         my_cards: list[Card] = to_collect[self.id]
         player_ids: list[int] = sorted(to_collect.keys())

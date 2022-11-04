@@ -62,6 +62,8 @@ python3 -m pip freeze > requirements.txt
 
 ## Running tests
 
+To capture console output for passing tests add `-rP` flag.
+
 ### Windows
 
 ```
