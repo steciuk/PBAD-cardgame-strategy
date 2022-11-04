@@ -27,6 +27,8 @@ def three_players_set_cards() -> None:
 
     game = Game(config)
     game.play()
+    game.play()
+    game.play()
 
 
 def four_players_random_cards_big_wars() -> None:
@@ -50,4 +52,4 @@ def default() -> None:
 
 
 if __name__ == "__main__":
-    four_players_random_cards_big_wars()
+    three_players_set_cards()

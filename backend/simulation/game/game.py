@@ -14,9 +14,9 @@ class Game():
         self._config: GameConfig = config
         self._num_players: int = len(config.players)
         self._players: dict[int, Player] = {}
-        self._initialize_players()
 
     def play(self) -> None:
+        self._initialize_players()
         for player in self._players.values():  # TODO: debug
             print(player._deck)
 
@@ -67,6 +67,7 @@ class Game():
             print(player._deck)
 
     def _initialize_players(self) -> None:
+        self._players = {}
         if self._config.cards_distribution == CardsDistribution.RANDOM:
             if isinstance(self._config.deck, DeckType):
                 deck: Deck = Deck(get_cards_list_of_type(self._config.deck))
