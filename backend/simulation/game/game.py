@@ -10,15 +10,17 @@ from simulation.utils.deck.utils import codes_to_cards, get_cards_list_of_type
 
 
 class Game():
-    def __init__(self, config: GameConfig) -> None:
+    def __init__(self, config: GameConfig, debug=True) -> None:
         self._config: GameConfig = config
         self._num_players: int = len(config.players)
         self._players: dict[int, Player] = {}
+        self.DEBUG: bool = debug
 
     def play(self) -> None:
         self._initialize_players()
-        for player in self._players.values():  # TODO: debug
-            print(player._deck)
+        if self.DEBUG:
+            for player in self._players.values():
+                print(player._deck)
 
         wars: int = 0
         turn: int = 1
@@ -26,7 +28,8 @@ class Game():
         players_in_game: list[Player] = [*self._players.values()]
 
         while len(players_in_game) > 1 and (self._config.max_turns is None or turn <= self._config.max_turns):
-            print(f'\nturn {turn}')
+            if self.DEBUG:
+                print(f'\nturn {turn}')
             turn += 1
             to_collect: defaultdict[int, list[Card]] = defaultdict(list)
             turn_won = False
@@ -36,7 +39,8 @@ class Game():
                 for player in players_in_game:
                     fighting[player.id] = player.play()
 
-                print(' vs '.join([card.rank for card in fighting.values()]))
+                if self.DEBUG:
+                    print(' vs '.join([card.rank for card in fighting.values()]))
 
                 highest_card: Card = max(fighting.items(), key=lambda x: x[1])[1]
                 fighting_players_ids: list[int] = [
@@ -59,12 +63,13 @@ class Game():
                             players_in_game.remove(self._players[i])
 
                         to_collect[i].extend(self._players[i].war())
+        if self.DEBUG:
+            print(f'Turns: {turn}')
+            print(f'Wars: {wars}')
 
-        print(f'Turns: {turn}')
-        print(f'Wars: {wars}')
-
-        for player in self._players.values():  # TODO: debug
-            print(player._deck)
+        if self.DEBUG:
+            for player in self._players.values():
+                print(player._deck)
 
     def _initialize_players(self) -> None:
         self._players = {}
