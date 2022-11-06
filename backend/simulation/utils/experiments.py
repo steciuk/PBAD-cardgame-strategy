@@ -13,7 +13,7 @@ def random_game_box_plot(samples: int, ranges: int, plays_in_range: int) -> None
         wins: int = 0
         for _ in range(ranges):
             for _ in range(plays_in_range):
-                game = Game(config)
+                game = Game(config, debug=False)
                 game.play()
                 if game._players[0].num_cards == 0:
                     looses += 1
@@ -64,6 +64,6 @@ def balanced_deck_scenario(samples: int, ranges: int, plays_in_range: int, strat
     print(sum(data[wins+looses]) / len(data[wins+looses]))
     if draw_plot:
         fig, ax = plt.subplots()
-        ax.boxplot(data.values(), labels=[x * 1000 for x in range(1, 2)])
+        ax.boxplot(data.values(), labels=[x * plays_in_range for x in range(1, ranges+1)])
         plt.show()
 
