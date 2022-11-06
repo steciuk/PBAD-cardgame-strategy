@@ -9,6 +9,10 @@ Na osi pionowej widzimy jaką część wszystkich gier wygrał gracz numer 1, a 
 
 Możemy zauważyć, że wyraźne zmniejszenie rozstrzału wyników przestajemy obserwować powyżej 50 tysięcy gier.
 
+W przypadku, gdy talie są od początku zbalansowane (każdy z graczy otrzymuje po 2 karty każdej z figur) otrzymujemy następujący wykres:
+![alt text](results_accuracy_balanced_decks.png "Title")
+W tym przypadku wyniki są bardziej wyrównane i skupione bliżej poziomu 50% wygranych.
+
 ### Strategia - moja karta na górze
 
 Zbadaliśmy jaki skutek przynosi stosowanie strategii wkładania do talii swojej karty ponad kartą przeciwnika.
@@ -22,5 +26,7 @@ Dla 50 000 gier i 20 prób, liczba wygranych partii wynosiła średnio 66.0272%
 
 Zbadaliśmy jaki skutek przynosi stosowanie strategii wkładania do talii swojej karty na spód.
 Do tego eksperymentu gracze otrzymywali idealnie zbalansowane talie (każda z figur występowała po 2 razy u każdego z graczy).
+
+![alt text](own_last.png "Title")
 
 Dla 50 000 gier i 20 prób, liczba wygranych partii wynosiła średnio 56.155%
