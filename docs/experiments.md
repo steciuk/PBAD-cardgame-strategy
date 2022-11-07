@@ -15,6 +15,8 @@ W tym przypadku wyniki są bardziej wyrównane i skupione bliżej poziomu 50% wy
 
 ### Strategia - moja karta na górze
 
+#### Przeciwko przeciwnikowi stosującemu strategię losową
+
 Zbadaliśmy jaki skutek przynosi stosowanie strategii wkładania do talii swojej karty ponad kartą przeciwnika.
 Do tego eksperymentu gracze otrzymywali idealnie zbalansowane talie (każda z figur występowała po 2 razy u każdego z graczy).
 
@@ -22,7 +24,16 @@ Do tego eksperymentu gracze otrzymywali idealnie zbalansowane talie (każda z fi
 
 Dla 50 000 gier i 20 prób, liczba wygranych partii wynosiła średnio 66.0272%
 
+#### Przeciwko przeciwnikowi stosującemu taką samą strategię
+
+![alt text](own_first_vs_own_first.png "Title")
+
+Dla 50 000 gier i 20 prób, liczba wygranych partii wynosiła średnio 49.99840000000001%.
+Jest to wynik zgodny z oczekiwaniami - oznacza, że strategia obu graczy w takim samym stopniu przybliża do wygranej.
+
 ### Strategia - moja karta na dole
+
+#### Przeciwko przeciwnikowi stosującemu strategię losową
 
 Zbadaliśmy jaki skutek przynosi stosowanie strategii wkładania do talii swojej karty na spód.
 Do tego eksperymentu gracze otrzymywali idealnie zbalansowane talie (każda z figur występowała po 2 razy u każdego z graczy).
@@ -30,3 +41,9 @@ Do tego eksperymentu gracze otrzymywali idealnie zbalansowane talie (każda z fi
 ![alt text](own_last.png "Title")
 
 Dla 50 000 gier i 20 prób, liczba wygranych partii wynosiła średnio 56.155%
+
+#### Przeciwko przeciwnikowi stosującemu taką samą strategię
+
+![alt text](own_last_vs_own_last.png "Title")
+
+Dla 50 000 gier i 20 prób, liczba wygranych partii wynosiła średnio 50.0011%.
