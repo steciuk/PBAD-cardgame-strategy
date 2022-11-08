@@ -5,8 +5,8 @@ from simulation.game_config.enums import CardsDistribution, DeckType
 from simulation.utils.deck.utils import codes_to_cards, get_cards_list_of_type
 
 
-def init_player_states(config: GameConfig) -> dict[int, PlayerState]:
-    players: dict[int, PlayerState] = {}
+def init_player_states(config: GameConfig) -> list[PlayerState]:
+    players: list[PlayerState] = []
     num_players: int = len(config.players)
 
     if config.cards_distribution == CardsDistribution.RANDOM:
@@ -24,7 +24,7 @@ def init_player_states(config: GameConfig) -> dict[int, PlayerState]:
             print(f"Cannot distribute full deck equally. {cards_left} cards left unused.")
 
         for i, player_config in enumerate(config.players):
-            players[i] = PlayerState(i, Deck(deck.pop_n_top(num_cards_per_player)), player_config.strategy)
+            players.append(PlayerState(i, Deck(deck.pop_n_top(num_cards_per_player)), player_config.strategy))
 
     elif config.cards_distribution == CardsDistribution.FIXED or config.cards_distribution == CardsDistribution.FIXED_RANDOM:
         for i, player_config in enumerate(config.players):
@@ -32,12 +32,12 @@ def init_player_states(config: GameConfig) -> dict[int, PlayerState]:
                 deck = Deck(codes_to_cards(player_config.cards))
                 if config.cards_distribution == CardsDistribution.FIXED_RANDOM:
                     deck.shuffle()
-                players[i] = PlayerState(i, deck, player_config.strategy)
+                players.append(PlayerState(i, deck, player_config.strategy))
             elif isinstance(player_config.cards, DeckType):
                 deck = Deck(get_cards_list_of_type(player_config.cards))
                 if config.cards_distribution == CardsDistribution.FIXED_RANDOM:
                     deck.shuffle()
-                players[i] = PlayerState(i, deck, player_config.strategy)
+                players.append(PlayerState(i, deck, player_config.strategy))
             else:
                 raise ValueError("Invalid config.")
 

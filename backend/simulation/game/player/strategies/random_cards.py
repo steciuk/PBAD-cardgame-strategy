@@ -1,24 +1,29 @@
 import random
 
 from simulation.deck.card import Card
-from simulation.deck.deck import Deck
-from simulation.game.player.player import Player
+from simulation.game.player.strategy import Strategy
 from simulation.game.state.game_state import GameState
+from simulation.game.state.player_state import PlayerState
 from simulation.game_config.configs import GameConfig
+from simulation.game_config.enums import StrategyType
 
 
-class RandomCardsPlayer(Player):
+class RandomCardsStrategy(Strategy):
     def __init__(self, id: int, game_config: GameConfig) -> None:
         super().__init__(id, game_config)
 
-    def strategy(self, game_state: GameState) -> list[Card]:
+    @property
+    def strategy_type(self) -> StrategyType:
+        return StrategyType.RANDOM_CARDS
+
+    def strategy(
+        self,
+        player_states: list[PlayerState],
+        to_collect: dict[int, list[Card]]
+    ) -> list[Card]:
         """
         Collects all cards randomly.
         """
-        to_collect = self._to_collect_or_none(game_state)
-        if to_collect is None:
-            return []
-
         all_cards = [card for cards in to_collect.values() for card in cards]
         random.shuffle(all_cards)
         return all_cards

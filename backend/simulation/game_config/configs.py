@@ -11,6 +11,8 @@ class PlayerConfig:
 
 class RulesConfig:
     def __init__(self, num_cards_in_war: int) -> None:
+        if num_cards_in_war < 0:
+            raise ValueError(f'num_cards_in_war must be non-negative, got {num_cards_in_war}')
         self.num_cards_in_war: int = num_cards_in_war
 
 
