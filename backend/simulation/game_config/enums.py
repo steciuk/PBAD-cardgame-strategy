@@ -17,7 +17,7 @@ class DeckType(Enum):
     HEARTS = 'HEARTS'
 
 
-class Strategy(Enum):
+class StrategyType(Enum):
     OWN_FIRST = 'OWN_FIRST'
     OWN_LAST = 'OWN_LAST'
     RANDOM_CARDS = 'RANDOM_CARDS'

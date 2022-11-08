@@ -1,19 +1,19 @@
 import pytest
 
 from simulation.game_config.configs import GameConfig, PlayerConfig
-from simulation.game_config.enums import CardsDistribution, Strategy
+from simulation.game_config.enums import CardsDistribution, StrategyType
 
 
 def test_num_players() -> None:
     config1 = GameConfig(players=[
-        PlayerConfig(Strategy.OWN_FIRST, None),
-        PlayerConfig(Strategy.OWN_FIRST, None),
-        PlayerConfig(Strategy.OWN_FIRST, None),
+        PlayerConfig(StrategyType.OWN_FIRST, None),
+        PlayerConfig(StrategyType.OWN_FIRST, None),
+        PlayerConfig(StrategyType.OWN_FIRST, None),
     ])
     assert len(config1.players) == 3
 
     with pytest.raises(ValueError) as err_info:
-        GameConfig(players=[PlayerConfig(Strategy.OWN_FIRST, None)])
+        GameConfig(players=[PlayerConfig(StrategyType.OWN_FIRST, None)])
 
     assert str(err_info.value) == 'At least 2 players are required.'
 
@@ -22,8 +22,8 @@ def test_cards_distribution_fixed() -> None:
     config1 = GameConfig(
         cards_distribution=CardsDistribution.FIXED,
         players=[
-            PlayerConfig(Strategy.OWN_FIRST, ['2H', '3C', '4S']),
-            PlayerConfig(Strategy.OWN_FIRST, ['5D', '6H']),
+            PlayerConfig(StrategyType.OWN_FIRST, ['2H', '3C', '4S']),
+            PlayerConfig(StrategyType.OWN_FIRST, ['5D', '6H']),
         ]
     )
     assert config1.cards_distribution == CardsDistribution.FIXED
@@ -35,8 +35,8 @@ def test_cards_distribution_fixed() -> None:
         GameConfig(
             cards_distribution=CardsDistribution.FIXED,
             players=[
-                PlayerConfig(Strategy.OWN_FIRST, ['2H', '3C', '4S']),
-                PlayerConfig(Strategy.OWN_FIRST, None),
+                PlayerConfig(StrategyType.OWN_FIRST, ['2H', '3C', '4S']),
+                PlayerConfig(StrategyType.OWN_FIRST, None),
             ]
         )
 
@@ -48,8 +48,8 @@ def test_cards_distribution_fixed() -> None:
         GameConfig(
             cards_distribution=CardsDistribution.FIXED,
             players=[
-                PlayerConfig(Strategy.OWN_FIRST, ['2H', '3C', '4S']),
-                PlayerConfig(Strategy.OWN_FIRST, []),
+                PlayerConfig(StrategyType.OWN_FIRST, ['2H', '3C', '4S']),
+                PlayerConfig(StrategyType.OWN_FIRST, []),
             ]
         )
 
@@ -63,8 +63,8 @@ def test_card_distribution_random() -> None:
         cards_distribution=CardsDistribution.RANDOM,
         deck=['2H', '3C', '4S', '5D', '6H', '7C', '8S', '9D', '10H', 'JC', 'QS', 'KD', 'AH'],
         players=[
-            PlayerConfig(Strategy.OWN_FIRST, ['2H', '3C', '4S']),
-            PlayerConfig(Strategy.OWN_FIRST, ['5D', '6H']),
+            PlayerConfig(StrategyType.OWN_FIRST, ['2H', '3C', '4S']),
+            PlayerConfig(StrategyType.OWN_FIRST, ['5D', '6H']),
         ]
     )
     assert config1.cards_distribution == CardsDistribution.RANDOM
