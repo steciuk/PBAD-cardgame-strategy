@@ -47,3 +47,10 @@ Dla 50 000 gier i 20 prób, liczba wygranych partii wynosiła średnio 56.155%
 ![alt text](own_last_vs_own_last.png "Title")
 
 Dla 50 000 gier i 20 prób, liczba wygranych partii wynosiła średnio 50.0011%.
+
+### Strategia - moja karta na dole przeciwko moja karta na górze
+
+Przy zastosowaniu takich strategii wiele gier trafia na nieskończoną pętlę i nigdy się nie kończy.
+Z tego powodu ustawiliśmy maksymalną liczbę rund na 15 000.
+Dla 20 000 różnych gier tylko 3425 (17.125%) udało się skończyć, a nieroztrzygniętych zostało 16575.
+Gracz stosujący strategię moja na spód wygrał 50.04379562043796% z tych 3425 gier.
