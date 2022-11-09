@@ -16,14 +16,14 @@ class RandomCardsStrategy(Strategy):
     def strategy_type(self) -> StrategyType:
         return StrategyType.RANDOM_CARDS
 
-    def strategy(
+    def collect(
         self,
-        player_states: list[PlayerState],
-        to_collect: dict[int, list[Card]]
+        game_state: GameState
     ) -> list[Card]:
         """
         Collects all cards randomly.
         """
-        all_cards = [card for cards in to_collect.values() for card in cards]
+        to_collect: dict[int, list[Card]] = game_state.to_collect_by_id[1]
+        all_cards: list[Card] = [card for cards in to_collect.values() for card in cards]
         random.shuffle(all_cards)
         return all_cards

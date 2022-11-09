@@ -17,14 +17,14 @@ class RandomPlayersStrategy(Strategy):
     def strategy_type(self) -> StrategyType:
         return StrategyType.RANDOM_PLAYERS
 
-    def strategy(
+    def collect(
         self,
-        player_states: list[PlayerState],
-        to_collect: dict[int, list[Card]]
+        game_state: GameState
     ) -> list[Card]:
         """
         Collects the cards in random order of the players. (in the order of cards played)
         """
+        to_collect: dict[int, list[Card]] = game_state.to_collect_by_id[1]
         player_ids: list[int] = list(to_collect.keys())
         random.shuffle(player_ids)
         cards = [card for id in player_ids for card in to_collect[id]]

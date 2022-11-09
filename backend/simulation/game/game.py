@@ -27,8 +27,8 @@ class Game():
             if self._debug:
                 print(game_state)
 
-            collected_cards = [] if game_state.to_collect is None else player_strategies[
-                game_state.to_collect[0]
+            collected_cards = [] if game_state.to_collect_by_id[0] is None else player_strategies[
+                game_state.to_collect_by_id[0]
             ].collect(game_state)
 
             game_state = simulator.turn(collected_cards)
@@ -37,3 +37,4 @@ class Game():
             print(game_state)
 
         print(f"Player {game_state.winner_id} won!")
+        print(f"With {game_state.players_states[game_state.winner_id].deck.size} cards left!")

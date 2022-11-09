@@ -15,14 +15,14 @@ class OwnFirstStrategy(Strategy):
     def strategy_type(self) -> StrategyType:
         return StrategyType.OWN_FIRST
 
-    def strategy(
+    def collect(
         self,
-        player_states: list[PlayerState],
-        to_collect: dict[int, list[Card]]
+        game_state: GameState
     ) -> list[Card]:
         """
         Collects own cards first, then the cards of other players in order of their ids. (in the order of cards played)
         """
+        to_collect: dict[int, list[Card]] = game_state.to_collect_by_id[1]
         my_cards: list[Card] = to_collect[self.id]
         player_ids: list[int] = sorted(to_collect.keys())
         other_cards = [card for id in player_ids for card in to_collect[id] if id != self.id]
