@@ -13,7 +13,7 @@ def three_players_draw_set_cards() -> None:
                  PlayerConfig(StrategyType.OWN_FIRST, DeckType.HEARTS)]
     )
 
-    game = Game(config, True)
+    game = Game(config)
     game.play()
 
 
@@ -25,7 +25,7 @@ def three_players_set_cards() -> None:
                  PlayerConfig(StrategyType.OWN_FIRST, ['5S', '6S', '7S'])]
     )
 
-    game = Game(config, True)
+    game = Game(config)
     game.play()
     game.play()
     game.play()
@@ -41,13 +41,13 @@ def four_players_random_cards_big_wars() -> None:
         rules=RulesConfig(num_cards_in_war=2)
     )
 
-    game = Game(config, True)
+    game = Game(config, debug=True)
     game.play()
 
 
 def default() -> None:
     config = GameConfig()
-    game = Game(config, True)
+    game = Game(config, debug=True)
     game.play()
 
 

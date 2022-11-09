@@ -18,6 +18,9 @@ class SimulatorV2:
         return deepcopy(self._game_state)
 
     def turn(self, collect_order: Optional[list[Card]] = None) -> GameState:
+        if self._game_state.winner_id is not None:
+            return self.game_state
+
         if self._game_state.to_collect is not None:
             if collect_order is None:
                 raise ValueError('Game state requires card collection, but no collection order was provided.')

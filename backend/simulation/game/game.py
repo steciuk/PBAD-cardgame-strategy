@@ -10,7 +10,7 @@ from simulation.utils.state.init_player_state import init_players_states
 
 
 class Game():
-    def __init__(self, config: GameConfig, debug: bool = False) -> None:
+    def __init__(self, config: GameConfig, *, debug: bool = False) -> None:
         self._config: GameConfig = config
         self._debug: bool = debug
 
