@@ -18,7 +18,7 @@ StrategiesMap: dict[StrategyType, Type[Strategy]] = {
 
 
 def get_strategy(strategy_type: StrategyType) -> Type[Strategy]:
-    strategy = StrategiesMap.get(strategy_type)
+    strategy: Type[Strategy] | None = StrategiesMap.get(strategy_type)
     if strategy is None:
         raise ValueError(f"Strategy {strategy_type} not found")
 
@@ -28,8 +28,7 @@ def get_strategy(strategy_type: StrategyType) -> Type[Strategy]:
 def get_strategies_form_game_state(game_state: GameState, game_config: GameConfig) -> dict[int, Strategy]:
     strategies: dict[int, Strategy] = {}
     for player_state in game_state.players_states:
-        strategy_type: StrategyType = player_state.strategy
-        strategy: Type[Strategy] = get_strategy(strategy_type)
+        strategy: Type[Strategy] = get_strategy(player_state.strategy)
         strategies[player_state.id] = strategy(player_state.id, game_config)
 
     return strategies

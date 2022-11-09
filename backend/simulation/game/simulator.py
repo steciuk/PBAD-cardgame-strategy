@@ -17,17 +17,20 @@ class SimulatorV2:
     def game_state(self) -> GameState:
         return deepcopy(self._game_state)
 
-    def turn(self, collect_order: Optional[list[Card]]) -> GameState:
+    def turn(self, collect_order: Optional[list[Card]] = None) -> GameState:
         if self._game_state.to_collect is not None:
             if collect_order is None:
                 raise ValueError('Game state requires card collection, but no collection order was provided.')
 
             # TODO: maybe check if the cards are the same
 
-            player_to_add_to = next(
-                player for player in self._game_state.players_states
-                if player.id == self._game_state.to_collect[0]
+            player_to_add_to: PlayerState | None = next(
+                (player for player in self._game_state.players_states
+                 if player.id == self._game_state.to_collect[0]), None
             )
+            if player_to_add_to is None:
+                raise ValueError('Player who should collect cards is not in the Game State.')
+
             player_to_add_to.deck.push_bottom(collect_order)
             self._game_state.to_collect = None
 

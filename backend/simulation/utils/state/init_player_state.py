@@ -5,7 +5,7 @@ from simulation.game_config.enums import CardsDistribution, DeckType
 from simulation.utils.deck.utils import codes_to_cards, get_cards_list_of_type
 
 
-def init_player_states(config: GameConfig) -> list[PlayerState]:
+def init_players_states(config: GameConfig) -> list[PlayerState]:
     players: list[PlayerState] = []
     num_players: int = len(config.players)
 

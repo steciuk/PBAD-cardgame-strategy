@@ -6,7 +6,7 @@ from simulation.game.simulator import SimulatorV2
 from simulation.game.state.game_state import GameState
 from simulation.game.state.player_state import PlayerState
 from simulation.game_config.configs import GameConfig
-from simulation.utils.state.init_player_state import init_player_states
+from simulation.utils.state.init_player_state import init_players_states
 
 
 class Game():
@@ -15,7 +15,7 @@ class Game():
         self._debug: bool = debug
 
     def play(self) -> None:
-        starting_player_states: list[PlayerState] = init_player_states(self._config)
+        starting_player_states: list[PlayerState] = init_players_states(self._config)
         game_state: GameState = GameState(starting_player_states)
         player_strategies: dict[int, Strategy] = get_strategies_form_game_state(
             game_state, self._config

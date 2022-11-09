@@ -4,13 +4,13 @@ from simulation.game_config.enums import CardsDistribution, DeckType, StrategyTy
 
 
 class PlayerConfig:
-    def __init__(self, strategy: StrategyType, cards: Union[DeckType, list[str], None]) -> None:
+    def __init__(self, strategy: StrategyType, cards: Union[DeckType, list[str], None] = None) -> None:
         self.strategy: StrategyType = strategy
         self.cards: DeckType | list[str] | None = cards
 
 
 class RulesConfig:
-    def __init__(self, num_cards_in_war: int) -> None:
+    def __init__(self, num_cards_in_war: int = 1) -> None:
         if num_cards_in_war < 0:
             raise ValueError(f'num_cards_in_war must be non-negative, got {num_cards_in_war}')
         self.num_cards_in_war: int = num_cards_in_war
