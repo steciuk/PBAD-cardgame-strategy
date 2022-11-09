@@ -1,4 +1,3 @@
-from enum import Enum
 from typing import Optional
 
 from simulation.deck.card import Card
@@ -23,8 +22,12 @@ class GameState:
         for player_state in self.players_states:
             repr += f'{player_state}\n'
 
-        if self.to_collect_by_id is not None:
-            repr += f'to_collect: {self.to_collect_by_id}\n'
+        if self.to_collect_by_id[0] is None:
+            repr += 'No cards to collect\n'
+        else:
+            repr += f'collect by: {self.to_collect_by_id[0]}\n'
+            cards_to_collect = dict(self.to_collect_by_id[1])
+            repr += f'to collect: {cards_to_collect}\n'
 
         return repr
 
