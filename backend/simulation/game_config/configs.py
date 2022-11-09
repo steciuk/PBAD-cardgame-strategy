@@ -1,16 +1,18 @@
 from typing import Union
 
-from simulation.game_config.enums import CardsDistribution, DeckType, Strategy
+from simulation.game_config.enums import CardsDistribution, DeckType, StrategyType
 
 
 class PlayerConfig:
-    def __init__(self, strategy: Strategy, cards: Union[DeckType, list[str], None]) -> None:
-        self.strategy: Strategy = strategy
+    def __init__(self, strategy: StrategyType, cards: Union[DeckType, list[str], None] = None) -> None:
+        self.strategy: StrategyType = strategy
         self.cards: DeckType | list[str] | None = cards
 
 
 class RulesConfig:
-    def __init__(self, num_cards_in_war: int) -> None:
+    def __init__(self, num_cards_in_war: int = 1) -> None:
+        if num_cards_in_war < 0:
+            raise ValueError(f'num_cards_in_war must be non-negative, got {num_cards_in_war}')
         self.num_cards_in_war: int = num_cards_in_war
 
 
@@ -20,7 +22,7 @@ class GameConfig:
             max_turns: Union[int, None] = None,
             cards_distribution: CardsDistribution = CardsDistribution.RANDOM,
             deck: Union[DeckType, list[str], None] = DeckType.FULL,
-            players: list[PlayerConfig] = [PlayerConfig(Strategy.OWN_FIRST, None), PlayerConfig(Strategy.OWN_FIRST, None)],
+            players: list[PlayerConfig] = [PlayerConfig(StrategyType.OWN_FIRST, None), PlayerConfig(StrategyType.OWN_FIRST, None)],
             rules: RulesConfig = RulesConfig(1)) -> None:
 
         if len(players) < 2:

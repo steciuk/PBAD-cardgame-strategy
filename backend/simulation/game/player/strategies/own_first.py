@@ -1,14 +1,25 @@
 from simulation.deck.card import Card
 from simulation.deck.deck import Deck
-from simulation.game.player.player import Player
+from simulation.game.player.strategy import Strategy
+from simulation.game.state.game_state import GameState
+from simulation.game.state.player_state import PlayerState
 from simulation.game_config.configs import GameConfig
+from simulation.game_config.enums import StrategyType
 
 
-class OwnFirstPlayer(Player):
-    def __init__(self, id: int, deck: Deck, game_config: GameConfig) -> None:
-        super().__init__(id, deck, game_config)
+class OwnFirstStrategy(Strategy):
+    def __init__(self, id: int, game_config: GameConfig) -> None:
+        super().__init__(id, game_config)
 
-    def strategy(self, to_collect: dict[int, list[Card]]) -> list[Card]:
+    @property
+    def strategy_type(self) -> StrategyType:
+        return StrategyType.OWN_FIRST
+
+    def strategy(
+        self,
+        player_states: list[PlayerState],
+        to_collect: dict[int, list[Card]]
+    ) -> list[Card]:
         """
         Collects own cards first, then the cards of other players in order of their ids. (in the order of cards played)
         """

@@ -63,3 +63,6 @@ class Deck:
         popped = self._cards[:n]
         self._cards = self._cards[n:]
         return popped
+
+    def pop_all(self) -> list[Card]:
+        return self.pop_n_top(self.size)

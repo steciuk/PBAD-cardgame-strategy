@@ -2,15 +2,26 @@ import random
 
 from simulation.deck.card import Card
 from simulation.deck.deck import Deck
-from simulation.game.player.player import Player
+from simulation.game.player.strategy import Strategy
+from simulation.game.state.game_state import GameState
+from simulation.game.state.player_state import PlayerState
 from simulation.game_config.configs import GameConfig
+from simulation.game_config.enums import StrategyType
 
 
-class RandomPlayersPlayer(Player):
-    def __init__(self, id: int, deck: Deck, game_config: GameConfig) -> None:
-        super().__init__(id, deck, game_config)
+class RandomPlayersStrategy(Strategy):
+    def __init__(self, id: int, game_config: GameConfig) -> None:
+        super().__init__(id, game_config)
 
-    def strategy(self, to_collect: dict[int, list[Card]]) -> list[Card]:
+    @property
+    def strategy_type(self) -> StrategyType:
+        return StrategyType.RANDOM_PLAYERS
+
+    def strategy(
+        self,
+        player_states: list[PlayerState],
+        to_collect: dict[int, list[Card]]
+    ) -> list[Card]:
         """
         Collects the cards in random order of the players. (in the order of cards played)
         """
