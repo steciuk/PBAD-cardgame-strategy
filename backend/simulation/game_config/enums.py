@@ -22,3 +22,4 @@ class StrategyType(Enum):
     OWN_LAST = 'OWN_LAST'
     RANDOM_CARDS = 'RANDOM_CARDS'
     RANDOM_PLAYERS = 'RANDOM_PLAYERS'
+    GREEDY = "GREEDY"
