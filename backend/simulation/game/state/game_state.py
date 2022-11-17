@@ -9,12 +9,12 @@ class GameState:
         self,
         players_states: list[PlayerState],
         turn: int = 0,
-        to_collect_by_id: tuple[int | None, dict[int, list[Card]]] = (None, {}),
+        to_collect_by_id: tuple[Optional[int], dict[int, list[Card]]] = (None, {}),
         winner_id: Optional[int] = None,
     ) -> None:
         self.players_states: list[PlayerState] = players_states
         self.turn: int = turn
-        self.to_collect_by_id: tuple[int | None, dict[int, list[Card]]] = to_collect_by_id
+        self.to_collect_by_id: tuple[Optional[int], dict[int, list[Card]]] = to_collect_by_id
         self.winner_id: Optional[int] = winner_id
 
     def __str__(self) -> str:

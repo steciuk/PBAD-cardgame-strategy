@@ -1,4 +1,5 @@
 import matplotlib.pyplot as plt
+import numpy as np
 from simulation.game.game import Game
 from simulation.game_config.configs import GameConfig, PlayerConfig, RulesConfig
 from simulation.game_config.enums import CardsDistribution, DeckType, StrategyType
@@ -15,17 +16,17 @@ def random_game_box_plot(samples: int, ranges: int, plays_in_range: int) -> None
             for _ in range(plays_in_range):
                 game = Game(config, debug=False)
                 game.play()
-                if game._players[0].num_cards == 0:
-                    looses += 1
-                else:
+                if game.game_state.winner_id == 0:
                     wins += 1
+                elif game.game_state.winner_id == 1:
+                    looses += 1
             print(wins + looses, "wins: ", wins / (wins + looses))
             if wins + looses in data:
                 data[wins+looses].append(wins / (wins + looses))
             else:
                 data[wins+looses] = [wins / (wins + looses)]
     fig, ax = plt.subplots()
-    ax.boxplot(data.values(), labels=[x * plays_in_range for x in range(1, ranges + 1)])
+    ax.boxplot(np.array(list(data.values())), labels=[x * plays_in_range for x in range(1, ranges + 1)])
     plt.show()
     
 def balanced_deck_scenario(samples: int, ranges: int, plays_in_range: int, strategy: StrategyType, draw_plot: bool=True) -> None:
@@ -52,10 +53,10 @@ def balanced_deck_scenario(samples: int, ranges: int, plays_in_range: int, strat
             for _ in range(plays_in_range):
                 game = Game(config, debug=False)
                 game.play()
-                if game._players[0].num_cards == 0:
-                    looses += 1
-                else:
+                if game.game_state.winner_id == 0:
                     wins += 1
+                elif game.game_state.winner_id == 1:
+                    looses += 1
             print(wins + looses, "wins: ", wins / (wins + looses))
             if wins + looses in data:
                 data[wins+looses].append(wins / (wins + looses))
@@ -64,6 +65,6 @@ def balanced_deck_scenario(samples: int, ranges: int, plays_in_range: int, strat
     print(sum(data[wins+looses]) / len(data[wins+looses]))
     if draw_plot:
         fig, ax = plt.subplots()
-        ax.boxplot(data.values(), labels=[x * plays_in_range for x in range(1, ranges+1)])
+        ax.boxplot(np.array(list(data.values())), labels=[x * plays_in_range for x in range(1, ranges+1)])
         plt.show()
 

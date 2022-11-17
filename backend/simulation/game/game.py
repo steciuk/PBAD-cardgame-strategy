@@ -11,36 +11,39 @@ from simulation.utils.state.init_player_state import init_players_states
 
 
 class Game():
+    game_state: GameState
+
     def __init__(self, config: GameConfig, *, debug: bool = False) -> None:
         self._config: GameConfig = config
         self._debug: bool = debug
+        self.game_state: GameState = GameState([])
 
     def play(self) -> None:
         starting_player_states: list[PlayerState] = init_players_states(self._config)
-        game_state: GameState = GameState(starting_player_states)
+        self.game_state: GameState = GameState(starting_player_states)
         player_strategies: dict[int, Strategy] = get_strategies_form_game_state(
-            game_state, self._config
+            self.game_state, self._config
         )
 
-        simulator = SimulatorV2(self._config, game_state)
+        simulator = SimulatorV2(self._config, self.game_state)
 
-        while game_state.winner_id is None:
+        while self.game_state.winner_id is None:
             if self._debug:
-                print(game_state)
+                print(self.game_state)
 
             collected_cards: list[Card] = []
-            if game_state.to_collect_by_id[0] is not None:
+            if self.game_state.to_collect_by_id[0] is not None:
                 collected_cards = player_strategies[
-                    game_state.to_collect_by_id[0]
-                ].collect(game_state)
+                    self.game_state.to_collect_by_id[0]
+                ].collect(self.game_state)
 
-            game_state = simulator.turn(collected_cards)
+            self.game_state = simulator.turn(collected_cards)
 
         if self._debug:
-            print(game_state)
-            if game_state.winner_id == -1:
+            print(self.game_state)
+            if self.game_state.winner_id == -1:
                 print('Draw')
-            elif game_state.winner_id == -2:
+            elif self.game_state.winner_id == -2:
                 print('Max turns reached')
             else:
-                print(f'Player: {game_state.winner_id} won!')
+                print(f'Player: {self.game_state.winner_id} won!')
