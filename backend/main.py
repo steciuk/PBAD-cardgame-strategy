@@ -8,6 +8,7 @@ from simulation.game.state.game_state import GameState
 from simulation.game.state.player_state import PlayerState
 from simulation.game_config.configs import GameConfig, PlayerConfig, RulesConfig
 from simulation.game_config.enums import CardsDistribution, DeckType, StrategyType
+from simulation.utils.experiments import random_game_box_plot, balanced_deck_scenario
 
 
 def three_players_draw_set_cards() -> None:
