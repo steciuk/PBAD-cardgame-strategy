@@ -54,21 +54,32 @@ class GreedyStrategy(Strategy):
         # other_cards = [card for id in player_ids for card in to_collect[id] if id != self.id]
 
     def select_best_permutation(self, own_state: PlayerState, other_players: list[PlayerState], cards_to_collect: list[Card]) -> list[Card]:
-        best_cards_amounts = -1
+        best_cards_amounts: int = -1
         best_order: list[Card] = []
+        cards_to_collect_reducted: list[Card] = copy.deepcopy(cards_to_collect)
 
-        other_players_copy1 = copy.deepcopy(other_players)
-        own_state_copy1 = copy.deepcopy(own_state)
 
+        max_to_collect: int = max(cards_to_collect).weight
+        cards_to_collect_multiset: list[Card] = sorted(cards_to_collect)
+        opponent_deck: list[Card] = other_players[0].deck.cards[len(own_state.deck.cards): len(own_state.deck.cards) + len(cards_to_collect)]
+        opponent_deck_multiset: list[Card] = sorted(opponent_deck)
+        reduction_dict: dict[int, Card] = {}
+        while len(opponent_deck_multiset) > 0 and opponent_deck_multiset[-1].weight > max_to_collect:
+            tmp = opponent_deck.index(opponent_deck_multiset[-1])
+            reduction_dict[tmp] = cards_to_collect_multiset[0]
+            opponent_deck_multiset.remove(opponent_deck_multiset[-1])
+            cards_to_collect_multiset.remove(cards_to_collect_multiset[0])
+
+        reduction_dict = dict(sorted(reduction_dict.items()))
+        for x in reversed(reduction_dict):
+            cards_to_collect_reducted.remove(reduction_dict[x])
+            opponent_deck.pop(x)
         
 
-        length_of_permutation: int  = min(len(other_players[0].deck.cards[len(own_state.deck.cards):]), len(cards_to_collect), 8)
+        length_of_permutation: int  = min(len(opponent_deck), len(cards_to_collect_reducted), 8)
 
-        for to_collect in permutations(cards_to_collect, length_of_permutation):
-            other_deck = other_players[0].deck.cards[len(own_state.deck.cards):]
-            own_deck = cards_to_collect
-            # assert len(other_deck) == len(other_players_copy1[0].deck.cards[len(own_state.deck.cards):])
-            # assert len(own_deck) == len(cards_to_collect)
+        for to_collect in permutations(cards_to_collect_reducted, length_of_permutation):
+            other_deck = opponent_deck
             
             can_collect: int = 0
             buffer_size: int = 1
@@ -97,6 +108,8 @@ class GreedyStrategy(Strategy):
             if best_cards_amounts == length_of_permutation:
                 # we wont get better card layout
                 break
-        best_order[len(best_order):] = set(cards_to_collect) - set(best_order)
+        best_order[len(best_order):] = set(cards_to_collect_reducted) - set(best_order)
+        for x in reduction_dict:
+            best_order.insert(x, reduction_dict[x])
         return best_order
 
