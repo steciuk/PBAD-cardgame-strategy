@@ -1,15 +1,17 @@
 import matplotlib.pyplot as plt
 import numpy as np
+
 from simulation.game.game import Game
-from simulation.game_config.configs import GameConfig, PlayerConfig, RulesConfig
-from simulation.game_config.enums import CardsDistribution, DeckType, StrategyType
+from simulation.game_config.configs import GameConfig, PlayerConfig
+from simulation.game_config.enums import CardsDistribution, StrategyType
+
 
 def random_game_box_plot(samples: int, ranges: int, plays_in_range: int) -> None:
-    data:dict[int, list[float]] = {}
+    data: dict[int, list[float]] = {}
     config = GameConfig(players=[PlayerConfig(StrategyType.RANDOM_CARDS, None),
                         PlayerConfig(StrategyType.RANDOM_CARDS, None)])
-    for i in range(samples):       
-        print('\n', i)      
+    for i in range(samples):
+        print('\n', i)
         looses: int = 0
         wins: int = 0
         for _ in range(ranges):
@@ -28,25 +30,28 @@ def random_game_box_plot(samples: int, ranges: int, plays_in_range: int) -> None
     fig, ax = plt.subplots()
     ax.boxplot(np.array(list(data.values())), labels=[x * plays_in_range for x in range(1, ranges + 1)])
     plt.show()
-    
-def balanced_deck_scenario(samples: int, ranges: int, plays_in_range: int, strategy: StrategyType, draw_plot: bool=True) -> None:
-    data:dict[int, list[float]] = {}
+
+
+def balanced_deck_scenario(
+        samples: int, ranges: int, plays_in_range: int, strategy: StrategyType, draw_plot: bool = True) -> None:
+    data: dict[int, list[float]] = {}
     config = GameConfig(
-                            players=[
-                                PlayerConfig(
-                                    strategy, ['2S', '2C', '3S', '3C', '4S', '4C', '5S', '5C', '6S', '6C', '7S', '7C', '8S', '8C', '9S', '9C', 'TS', 'TC', 'JS', 'JC', 'QS', 'QC', 'KS', 'KC', 'AS', 'AC']
-                                ),
-                                PlayerConfig(
-                                    StrategyType.RANDOM_CARDS, 
-                                    ['2H', '2D', '3H', '3D', '4H', '4D', '5H', '5D', '6H', '6D', '7H', '7D', '8H', '8D', '9H', '9D', 'TH', 'TD', 'JH', 'JD','QH', 'QD', 'KH', 'KD', 'AH', 'AD']
-                                )
-                            ],
-                            cards_distribution=CardsDistribution.FIXED_RANDOM
-                        )
+        players=[
+            PlayerConfig(
+                strategy,
+                ['2S', '2C', '3S', '3C', '4S', '4C', '5S', '5C', '6S', '6C', '7S', '7C',
+                 '8S', '8C', '9S', '9C', 'TS', 'TC', 'JS', 'JC', 'QS', 'QC', 'KS', 'KC',
+                 'AS', 'AC']),
+            PlayerConfig(
+                StrategyType.RANDOM_CARDS,
+                ['2H', '2D', '3H', '3D', '4H', '4D', '5H', '5D', '6H', '6D', '7H', '7D',
+                 '8H', '8D', '9H', '9D', 'TH', 'TD', 'JH', 'JD', 'QH', 'QD', 'KH', 'KD',
+                 'AH', 'AD'])],
+        cards_distribution=CardsDistribution.FIXED_RANDOM)
     looses: int = 0
     wins: int = 0
-    for i in range(samples):       
-        print('\n', i)      
+    for i in range(samples):
+        print('\n', i)
         looses = 0
         wins = 0
         for _ in range(ranges):
@@ -67,4 +72,3 @@ def balanced_deck_scenario(samples: int, ranges: int, plays_in_range: int, strat
         fig, ax = plt.subplots()
         ax.boxplot(np.array(list(data.values())), labels=[x * plays_in_range for x in range(1, ranges+1)])
         plt.show()
-

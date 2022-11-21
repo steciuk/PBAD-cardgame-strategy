@@ -1,5 +1,3 @@
-from collections import defaultdict
-
 from simulation.deck.card import Card
 from simulation.game.player.map import get_strategies_form_game_state
 from simulation.game.player.strategy import Strategy

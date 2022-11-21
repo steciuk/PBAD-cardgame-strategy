@@ -1,8 +1,6 @@
 from simulation.deck.card import Card
-from simulation.deck.deck import Deck
 from simulation.game.player.strategy import Strategy
 from simulation.game.state.game_state import GameState
-from simulation.game.state.player_state import PlayerState
 from simulation.game_config.configs import GameConfig
 from simulation.game_config.enums import StrategyType
 
