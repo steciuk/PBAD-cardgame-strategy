@@ -5,6 +5,7 @@ from simulation.game.player.strategies.own_last import OwnLastStrategy
 from simulation.game.player.strategies.random_cards import RandomCardsStrategy
 from simulation.game.player.strategies.random_players import RandomPlayersStrategy
 from simulation.game.player.strategies.greedy import GreedyStrategy
+from simulation.game.player.strategies.greedy_grouped_by_6 import GreedyStrategyGroupedBy6
 from simulation.game.player.strategy import Strategy
 from simulation.game.state.game_state import GameState
 from simulation.game_config.configs import GameConfig
@@ -16,6 +17,7 @@ StrategiesMap: dict[StrategyType, Type[Strategy]] = {
     StrategyType.RANDOM_CARDS: RandomCardsStrategy,
     StrategyType.RANDOM_PLAYERS: RandomPlayersStrategy,
     StrategyType.GREEDY: GreedyStrategy,
+    StrategyType.GREEDY_GROUPED_BY_6: GreedyStrategyGroupedBy6,
 }
 
 
