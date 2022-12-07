@@ -62,24 +62,7 @@ class GreedyStrategy(Strategy):
         for to_collect in permutations(cards_to_collect_reducted, length_of_permutation):
             other_deck = opponent_deck
             
-            can_collect: int = 0
-            buffer_size: int = 1
-            visible_card: bool = True
-            
-            # check how many cards we can take with this permutation 
-            for i, x in enumerate(to_collect):
-                if not visible_card:
-                    buffer_size += 1
-                    visible_card = True
-                    continue
-                if x == other_deck[i]:
-                    buffer_size += 1
-                    visible_card = False
-                elif x > other_deck[i]:
-                    can_collect += buffer_size
-                    buffer_size = 1
-                else:
-                    buffer_size = 1
+            can_collect: int = self.max_card_to_take(list(to_collect), other_deck, length_of_permutation)
 
             if can_collect > best_cards_amounts:
                 best_cards_amounts = can_collect
@@ -117,28 +100,10 @@ class GreedyStrategy(Strategy):
         length_of_permutation: int  = min(len(opponent_deck), len(cards_to_collect_reducted), 6)
 
         for to_collect in permutations(cards_to_collect_reducted, length_of_permutation):
-            other_deck = opponent_deck
+            other_deck: list[Card] = opponent_deck
             
-            can_collect: int = 0
-            buffer_size: int = 1
-            visible_card: bool = True
+            can_collect: int = self.max_card_to_take(list(to_collect), other_deck, length_of_permutation)
             
-            # check how many cards we can take with this permutation 
-            for i, x in enumerate(to_collect):
-                if not visible_card:
-                    buffer_size += 1
-                    visible_card = True
-                    continue
-                if x == other_deck[i]:
-                    buffer_size += 1
-                    visible_card = False
-                elif x > other_deck[i]:
-                    can_collect += buffer_size
-                    buffer_size = 1
-                else:
-                    buffer_size = 1
-
-            # print(can_collect, to_collect)
             if can_collect > best_cards_amounts:
                 best_cards_amounts = can_collect
                 best_order = list(to_collect)
@@ -151,3 +116,46 @@ class GreedyStrategy(Strategy):
             best_order.insert(x, reduction_dict[x])
         return best_order
 
+    def max_card_to_take(self, my_deck: list[Card], opponent_deck: list[Card], cards_to_check: int) -> int:
+        can_collect: int = 0
+        buffer_size: int = 1
+        visible_card: bool = True
+        
+        # check how many cards we can take with this permutation 
+        for i, x in enumerate(my_deck[:cards_to_check]):
+            if not visible_card:
+                buffer_size += 1
+                visible_card = True
+                continue
+            if x == opponent_deck[i]:
+                buffer_size += 1
+                visible_card = False
+            elif x > opponent_deck[i]:
+                can_collect += buffer_size
+                buffer_size = 1
+            else:
+                buffer_size = 1
+        return can_collect
+    
+    def max_card_to_take_and_min_to_give(self, my_deck: list[Card], opponent_deck: list[Card], cards_to_check: int) -> float:
+        can_collect: float = 0
+        buffer_size: int = 1
+        visible_card: bool = True
+        
+        # check how many cards we can take with this permutation 
+        for i, x in enumerate(my_deck[:cards_to_check]):
+            if not visible_card:
+                buffer_size += 1
+                visible_card = True
+                continue
+            if x == opponent_deck[i]:
+                buffer_size += 1
+                visible_card = False
+            elif x > opponent_deck[i]:
+                can_collect += buffer_size
+                buffer_size = 1
+            else:
+                for j in range(buffer_size):
+                    can_collect -= opponent_deck[i - j].weight * 0.0001
+                buffer_size = 1
+        return can_collect

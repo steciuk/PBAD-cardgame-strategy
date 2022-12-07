@@ -26,7 +26,6 @@ class GreedyStrategyGroupedBy6(GreedyStrategy):
     def select_best_permutation(self, own_state: PlayerState, other_players: list[PlayerState], cards_to_collect: list[Card]) -> list[Card]:
         best_cards_amounts: int = -1
         best_order: list[Card] = []
-        # cards_to_collect_reducted: list[Card] = copy.deepcopy(cards_to_collect)
 
         opponent_deck: list[Card] = other_players[0].deck.cards[len(own_state.deck.cards): len(own_state.deck.cards) + len(cards_to_collect)]
 
@@ -37,26 +36,8 @@ class GreedyStrategyGroupedBy6(GreedyStrategy):
             for to_collect in permutations(cards_to_collect[just_collected: just_collected + length_of_permutation]):
                 other_deck = opponent_deck
                 
-                can_collect: int = 0
-                buffer_size: int = 1
-                visible_card: bool = True
-                
-                # check how many cards we can take with this permutation 
-                for i, x in enumerate(to_collect):
-                    if not visible_card:
-                        buffer_size += 1
-                        visible_card = True
-                        continue
-                    if x == other_deck[i]:
-                        buffer_size += 1
-                        visible_card = False
-                    elif x > other_deck[i]:
-                        can_collect += buffer_size
-                        buffer_size = 1
-                    else:
-                        buffer_size = 1
+                can_collect: int = self.max_card_to_take(list(to_collect), other_deck, length_of_permutation)
 
-                # print(can_collect, to_collect)
                 if can_collect > best_cards_amounts:
                     best_cards_amounts = can_collect
                     best_order = list(to_collect)
