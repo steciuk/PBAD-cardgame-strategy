@@ -1,7 +1,5 @@
 import random
 import copy
-import numpy as np
-from typing import Type
 from itertools import permutations
 from simulation.deck.card import Card
 from simulation.deck.deck import Deck
@@ -9,14 +7,8 @@ from simulation.game.player.strategy import Strategy
 from simulation.game.state.game_state import GameState
 from simulation.game.state.player_state import PlayerState
 from simulation.game_config.configs import GameConfig
-from simulation.game_config.enums import StrategyType, CardsDistribution
-from simulation.game_config.configs import GameConfig, PlayerConfig
-# from simulation.game.game import Game
-from simulation.game.simulator import SimulatorV2
-from simulation.game.player.strategies.random_players import RandomPlayersStrategy
-from simulation.game.player.strategies.random_cards import RandomCardsStrategy
-
-# from simulation.game.player.map import StrategiesMap
+from simulation.game_config.enums import StrategyType
+from simulation.game_config.configs import GameConfig
 
 
 class GreedyStrategy(Strategy):

@@ -6,7 +6,9 @@ from simulation.game.player.strategies.random_cards import RandomCardsStrategy
 from simulation.game.player.strategies.random_players import RandomPlayersStrategy
 from simulation.game.player.strategies.greedy import GreedyStrategy
 from simulation.game.player.strategies.greedy_grouped_by_6 import GreedyStrategyGroupedBy6
-from simulation.game.player.strategies.greedy_random_permutations import GreedyRandomPermutations
+from simulation.game.player.strategies.greedy_random_permutations_10000 import GreedyRandomPermutations_10000
+from simulation.game.player.strategies.greedy_random_permutations_100 import GreedyRandomPermutations_100
+from simulation.game.player.strategies.greedy_random_permutations_2 import GreedyRandomPermutations_2
 from simulation.game.player.strategies.growing import GrowingStrategy
 from simulation.game.player.strategies.decreasing import DecreasingStrategy
 from simulation.game.player.strategy import Strategy
@@ -21,7 +23,9 @@ StrategiesMap: dict[StrategyType, Type[Strategy]] = {
     StrategyType.RANDOM_PLAYERS: RandomPlayersStrategy,
     StrategyType.GREEDY: GreedyStrategy,
     StrategyType.GREEDY_GROUPED_BY_6: GreedyStrategyGroupedBy6,
-    StrategyType.GREEDY_RANDOM_PERMUTATIONS: GreedyRandomPermutations,
+    StrategyType.GREEDY_RANDOM_PERMUTATIONS_10000: GreedyRandomPermutations_10000,
+    StrategyType.GREEDY_RANDOM_PERMUTATIONS_100: GreedyRandomPermutations_100,
+    StrategyType.GREEDY_RANDOM_PERMUTATIONS_2: GreedyRandomPermutations_2,
     StrategyType.GROWING: GrowingStrategy,
     StrategyType.DECREASING: DecreasingStrategy, 
 }
