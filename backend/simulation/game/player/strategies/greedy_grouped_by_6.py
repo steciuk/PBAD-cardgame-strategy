@@ -1,3 +1,4 @@
+import random
 from itertools import permutations
 from simulation.deck.card import Card
 from simulation.game.state.game_state import GameState
@@ -26,6 +27,8 @@ class GreedyStrategyGroupedBy6(GreedyStrategy):
     def select_best_permutation(self, own_state: PlayerState, other_players: list[PlayerState], cards_to_collect: list[Card]) -> list[Card]:
         best_cards_amounts: int = -1
         best_order: list[Card] = []
+
+        random.shuffle(cards_to_collect)
 
         opponent_deck: list[Card] = other_players[0].deck.cards[len(own_state.deck.cards): len(own_state.deck.cards) + len(cards_to_collect)]
 
