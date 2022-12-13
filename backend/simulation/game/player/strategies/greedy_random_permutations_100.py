@@ -10,6 +10,7 @@ from simulation.game.player.strategies.greedy import GreedyStrategy
 
 PERMUTATIONS_NUMBER = 100
 
+
 class GreedyRandomPermutations_100(GreedyStrategy):
     def __init__(self, id: int, game_config: GameConfig) -> None:
         super().__init__(id, game_config)
@@ -39,16 +40,18 @@ class GreedyRandomPermutations_100(GreedyStrategy):
 
         to_collect = copy.deepcopy(cards_to_collect)
 
+        random.shuffle(to_collect)
+
         if math.factorial(length_of_permutation) <= PERMUTATIONS_NUMBER:
             # check all permutations
-            return super().select_best_permutation(own_state, other_players, cards_to_collect)
-
-        random.shuffle(to_collect)
+            return super().select_best_permutation(own_state, other_players, to_collect)
+        
         for _ in range(PERMUTATIONS_NUMBER):
             other_deck = opponent_deck
 
             # can_collect: int = self.max_card_to_take(list(to_collect), other_deck, length_of_permutation)
-            can_collect: float = self.max_card_to_take_and_min_to_give(list(to_collect), other_deck, length_of_permutation)
+            can_collect: float = self.max_card_to_take_and_min_to_give(
+                list(to_collect), other_deck, length_of_permutation)
 
             if can_collect > best_cards_amounts:
                 best_cards_amounts = can_collect
