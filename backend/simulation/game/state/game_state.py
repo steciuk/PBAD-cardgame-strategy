@@ -16,6 +16,7 @@ class GameState:
         self.turn: int = turn
         self.to_collect_by_id: tuple[Optional[int], dict[int, list[Card]]] = to_collect_by_id
         self.winner_id: Optional[int] = winner_id
+        self.wars_number: dict[int, int] = {}
 
     def __str__(self) -> str:
         repr = f'turn: {self.turn}\n'

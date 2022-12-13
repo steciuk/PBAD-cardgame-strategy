@@ -45,6 +45,11 @@ class SimulatorV2:
             self._game_state.winner_id = -2  # max_turns reached
             return self.game_state
 
+        if collect_order != None and len(collect_order) in self._game_state.wars_number: 
+            self._game_state.wars_number[len(collect_order)] += 1
+        elif collect_order != None:
+            self._game_state.wars_number[len(collect_order)] = 1
+
         to_collect: defaultdict[int, list[Card]] = defaultdict(list)
         self._game_state.turn += 1
 
