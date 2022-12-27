@@ -23,7 +23,8 @@ STRATEGIES_LIST = [
     StrategyType.GREEDY_RANDOM_PERMUTATIONS_100,
     StrategyType.GREEDY_RANDOM_PERMUTATIONS_2,
     StrategyType.GROWING,
-    StrategyType.DECREASING
+    StrategyType.DECREASING,
+    StrategyType.GREEDY_GREEDY
 ]
 
 CONSTANTS_STRATEGIES = [
@@ -91,10 +92,7 @@ def each_vs_each(iterations: int = 10000) -> None:
     for strategy1 in STRATEGIES_LIST:
         for strategy2 in STRATEGIES_LIST:
             print(strategy1, strategy2)
-            if strategy1 in CONSTANTS_STRATEGIES and strategy2 in CONSTANTS_STRATEGIES:
-                max_turns = 20000
-            else:
-                max_turns = 100000
+            max_turns = 20000
             balanced_deck_scenario(1, 1, iterations, strategy=strategy1,
                                    strategy2=strategy2, draw_box_plot=False, max_turns=max_turns)
 
