@@ -5,12 +5,12 @@ W grze w Wojnę, gdy mamy dwóch graczy i gracze zbierają karty losowo, ilość
 Dlatego właśnie przeprowadziliśmy eksperyment w którym gracze otrzymują karty losowo i każdy z graczy po wygranej wkłada karty do swojej talii w losowej kolejności. Próby były powtarzane 20 razy.
 Na osi pionowej widzimy jaką część wszystkich gier wygrał gracz numer 1, a na osi poziomej liczbę rozegranych gier.
 
-![alt text](results_accuracy.png "Title")
+![alt text](image/results_accuracy.png "Title")
 
 Możemy zauważyć, że wyraźne zmniejszenie rozstrzału wyników przestajemy obserwować powyżej 50 tysięcy gier.
 
 W przypadku, gdy talie są od początku zbalansowane (każdy z graczy otrzymuje po 2 karty każdej z figur) otrzymujemy następujący wykres:
-![alt text](results_accuracy_balanced_decks.png "Title")
+![alt text](image/results_accuracy_balanced_decks.png "Title")
 W tym przypadku wyniki są bardziej wyrównane i skupione bliżej poziomu 50% wygranych.
 
 ### Strategia - moja karta na górze
@@ -20,13 +20,13 @@ W tym przypadku wyniki są bardziej wyrównane i skupione bliżej poziomu 50% wy
 Zbadaliśmy jaki skutek przynosi stosowanie strategii wkładania do talii swojej karty ponad kartą przeciwnika.
 Do tego eksperymentu gracze otrzymywali idealnie zbalansowane talie (każda z figur występowała po 2 razy u każdego z graczy).
 
-![alt text](own_first.png "Title")
+![alt text](image/own_first.png "Title")
 
 Dla 50 000 gier i 20 prób, liczba wygranych partii wynosiła średnio 66.0272%
 
 #### Przeciwko przeciwnikowi stosującemu taką samą strategię
 
-![alt text](own_first_vs_own_first.png "Title")
+![alt text](image/own_first_vs_own_first.png "Title")
 
 Dla 50 000 gier i 20 prób, liczba wygranych partii wynosiła średnio 49.99840000000001%.
 Jest to wynik zgodny z oczekiwaniami - oznacza, że strategia obu graczy w takim samym stopniu przybliża do wygranej.
@@ -38,13 +38,13 @@ Jest to wynik zgodny z oczekiwaniami - oznacza, że strategia obu graczy w takim
 Zbadaliśmy jaki skutek przynosi stosowanie strategii wkładania do talii swojej karty na spód.
 Do tego eksperymentu gracze otrzymywali idealnie zbalansowane talie (każda z figur występowała po 2 razy u każdego z graczy).
 
-![alt text](own_last.png "Title")
+![alt text](image/own_last.png "Title")
 
 Dla 50 000 gier i 20 prób, liczba wygranych partii wynosiła średnio 56.155%
 
 #### Przeciwko przeciwnikowi stosującemu taką samą strategię
 
-![alt text](own_last_vs_own_last.png "Title")
+![alt text](image/own_last_vs_own_last.png "Title")
 
 Dla 50 000 gier i 20 prób, liczba wygranych partii wynosiła średnio 50.0011%.
 
