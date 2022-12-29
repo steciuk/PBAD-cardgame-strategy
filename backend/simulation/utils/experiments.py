@@ -81,11 +81,12 @@ def balanced_deck_scenario(
                                 # print(cards_number, int((cards_number - 2)/4))
                                 wars.append(int((cards_number - 2)/4))
                                 # wars.append(cards_number)
-            print(wins + looses, "wins: ", wins / (wins + looses))
-            if wins + looses in data:
-                data[wins+looses].append(wins / (wins + looses))
-            else:
-                data[wins+looses] = [wins / (wins + looses)]
+            if wins + looses > 0:
+                print(wins + looses, "wins: ", wins / (wins + looses))
+                if wins + looses in data:
+                    data[wins+looses].append(wins / (wins + looses))
+                else:
+                    data[wins+looses] = [wins / (wins + looses)]
 
     end = time.time()
     print("time in sec", end - start)
