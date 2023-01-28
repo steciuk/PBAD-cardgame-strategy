@@ -10,9 +10,8 @@ Projekt wykonany w ramach przedmiotu PBAD (Projekt badawczy) w semestrze 2022Z, 
 
 Adam Steciuk (300253)  
 adam.steciuk.stud@pw.edu.pl  
-TODO: @janek - uzupełnij  
-Jan Prugarewicz (xxxxxx)  
-xxx.xxx@xxx.xxx  
+Jan Prugarewicz (293135)  
+jan.prugarewicz.stud@pw.edu.pl
 Tomasz Słojewski (300268)  
 tomasz.slojewski.stud@pw.edu.pl
 
@@ -29,18 +28,3 @@ Może dotyczyć wybranego elementu funkcjonalnego z palety algorytmów wykorzyst
 - Redukcji czasu obliczeń
 - Opracowanie heurystyk przyspieszających
 - Odpowiedzeniu na pytanie czy zastosowany system komputerowy pozwala na uzyskanie przewagi a jeśli tak, to przy jakich warunkach.
-
-## Instrukcja uruchomienia
-
-Opis sposobu uruchomienia znajduje się we właściwych dla części projektu plikach READMEs
-
-- [Frontend](frontend/README.md)
-- [Backend](backend/README.md)
-
-## Dokumentacja
-
-TODO: opisz gdzie dokumentacja
-
-## Artykuł
-
-TODO: opisz gdzie artykuł
