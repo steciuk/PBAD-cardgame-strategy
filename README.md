@@ -4,14 +4,14 @@ Projekt wykonany w ramach przedmiotu PBAD (Projekt badawczy) w semestrze 2022Z, 
 
 **Prowadzący przedmiotu**: dr inż. Piotr Pałka  
 **Prowadzący projektu**: dr inż. Sebastian Plamowski  
-**Ocena**: x/x
+**Ocena**: 10/10
 
 ## Autorzy
 
 Adam Steciuk (300253)  
 adam.steciuk.stud@pw.edu.pl  
 Jan Prugarewicz (293135)  
-jan.prugarewicz.stud@pw.edu.pl
+jan.prugarewicz.stud@pw.edu.pl  
 Tomasz Słojewski (300268)  
 tomasz.slojewski.stud@pw.edu.pl
 
